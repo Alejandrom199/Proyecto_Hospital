@@ -55,7 +55,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(70, 100);
+            label1.Location = new Point(70, 60);
             label1.Name = "label1";
             label1.Size = new Size(87, 25);
             label1.TabIndex = 0;
@@ -64,7 +64,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(70, 150);
+            label2.Location = new Point(70, 110);
             label2.Name = "label2";
             label2.Size = new Size(90, 25);
             label2.TabIndex = 1;
@@ -73,7 +73,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(70, 200);
+            label3.Location = new Point(70, 160);
             label3.Name = "label3";
             label3.Size = new Size(70, 25);
             label3.TabIndex = 2;
@@ -82,7 +82,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(70, 250);
+            label4.Location = new Point(70, 210);
             label4.Name = "label4";
             label4.Size = new Size(181, 25);
             label4.TabIndex = 3;
@@ -91,7 +91,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(70, 300);
+            label5.Location = new Point(70, 260);
             label5.Name = "label5";
             label5.Size = new Size(54, 25);
             label5.TabIndex = 4;
@@ -100,7 +100,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(70, 350);
+            label6.Location = new Point(70, 310);
             label6.Name = "label6";
             label6.Size = new Size(89, 25);
             label6.TabIndex = 5;
@@ -109,7 +109,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(70, 400);
+            label7.Location = new Point(70, 360);
             label7.Name = "label7";
             label7.Size = new Size(83, 25);
             label7.TabIndex = 6;
@@ -118,7 +118,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(70, 450);
+            label8.Location = new Point(70, 410);
             label8.Name = "label8";
             label8.Size = new Size(58, 25);
             label8.TabIndex = 7;
@@ -129,7 +129,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.HotTrack;
-            label12.Location = new Point(206, 30);
+            label12.Location = new Point(206, 10);
             label12.Name = "label12";
             label12.Size = new Size(260, 32);
             label12.TabIndex = 11;
@@ -138,35 +138,35 @@
             // tbxNombre
             // 
             tbxNombre.ForeColor = SystemColors.WindowText;
-            tbxNombre.Location = new Point(312, 100);
+            tbxNombre.Location = new Point(312, 60);
             tbxNombre.Name = "tbxNombre";
             tbxNombre.Size = new Size(277, 31);
             tbxNombre.TabIndex = 12;
             // 
             // tbxApellidos
             // 
-            tbxApellidos.Location = new Point(312, 150);
+            tbxApellidos.Location = new Point(312, 110);
             tbxApellidos.Name = "tbxApellidos";
             tbxApellidos.Size = new Size(277, 31);
             tbxApellidos.TabIndex = 13;
             // 
             // tbxCedula
             // 
-            tbxCedula.Location = new Point(312, 200);
+            tbxCedula.Location = new Point(312, 160);
             tbxCedula.Name = "tbxCedula";
             tbxCedula.Size = new Size(277, 31);
             tbxCedula.TabIndex = 14;
             // 
             // tbxDireccion
             // 
-            tbxDireccion.Location = new Point(166, 350);
+            tbxDireccion.Location = new Point(166, 310);
             tbxDireccion.Name = "tbxDireccion";
             tbxDireccion.Size = new Size(423, 31);
             tbxDireccion.TabIndex = 15;
             // 
             // tbxTelefono
             // 
-            tbxTelefono.Location = new Point(312, 400);
+            tbxTelefono.Location = new Point(312, 360);
             tbxTelefono.Name = "tbxTelefono";
             tbxTelefono.Size = new Size(277, 31);
             tbxTelefono.TabIndex = 16;
@@ -174,7 +174,7 @@
             // tbxEmail
             // 
             tbxEmail.Cursor = Cursors.IBeam;
-            tbxEmail.Location = new Point(166, 450);
+            tbxEmail.Location = new Point(166, 410);
             tbxEmail.Name = "tbxEmail";
             tbxEmail.Size = new Size(423, 31);
             tbxEmail.TabIndex = 17;
@@ -183,14 +183,14 @@
             // 
             cbxSexo.FormattingEnabled = true;
             cbxSexo.Items.AddRange(new object[] { "MASCULINO", "FEMENINO" });
-            cbxSexo.Location = new Point(312, 300);
+            cbxSexo.Location = new Point(312, 260);
             cbxSexo.Name = "cbxSexo";
             cbxSexo.Size = new Size(277, 33);
             cbxSexo.TabIndex = 18;
             // 
             // dtpFechaNacimiento
             // 
-            dtpFechaNacimiento.Location = new Point(256, 250);
+            dtpFechaNacimiento.Location = new Point(256, 210);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.Size = new Size(333, 31);
             dtpFechaNacimiento.TabIndex = 19;

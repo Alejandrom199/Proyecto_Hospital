@@ -27,7 +27,7 @@ namespace CapaServicios.Servicios
                     new SqlParameter("@apellido", entidad.Apellido),
                     new SqlParameter("@cedula", entidad.Cedula),
                     new SqlParameter("@fecha_nacimiento", entidad.FechaNacimiento),
-                    new SqlParameter("sexo", entidad.Sexo),
+                    new SqlParameter("@sexo", entidad.Sexo),
                     new SqlParameter("@direccion", entidad.Direccion),
                     new SqlParameter("@telefono", entidad.Telefono),
                     new SqlParameter("@email", entidad.Email),
@@ -39,7 +39,7 @@ namespace CapaServicios.Servicios
             }
             catch (Exception e)
             {
-                throw new Exception("Error al crear Candidata: " + e.Message);
+                throw new Exception("Error al crear Paciente: " + e.Message);
             }
         }
 
@@ -168,11 +168,10 @@ namespace CapaServicios.Servicios
                     new SqlParameter("@apellido", entidad.Apellido),
                     new SqlParameter("@cedula", entidad.Cedula),
                     new SqlParameter("@fecha_nacimiento", entidad.FechaNacimiento),
-                    new SqlParameter("sexo", entidad.Sexo),
+                    new SqlParameter("@sexo", entidad.Sexo),
                     new SqlParameter("@direccion", entidad.Direccion),
                     new SqlParameter("@telefono", entidad.Telefono),
                     new SqlParameter("@email", entidad.Email),
-                    new SqlParameter("@fecha_registro", entidad.FechaRegistro),
                     new SqlParameter("@historial_medico", entidad.HistorialMedico),
                 };
 

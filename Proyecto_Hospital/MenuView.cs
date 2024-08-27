@@ -1,5 +1,7 @@
 ﻿using CapaPresentacion.Medico;
+using CapaPresentacion.Medico.Complementos_Medico;
 using CapaPresentacion.Paciente;
+using CapaPresentacion.Medicamento;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,6 +90,8 @@ namespace CapaPresentacion
                 btnAgregarPaciente.Width = 236;
                 btnAgregarPaciente.Height = 50;
                 btnAgregarPaciente.BackColor = Color.LightSkyBlue; //LightSkyBlue
+                btnAgregarPaciente.FlatStyle = FlatStyle.Flat;
+                btnAgregarPaciente.ForeColor = SystemColors.HotTrack;
                 btnAgregarPaciente.Click += btnAgregarPaciente_Click;
 
                 btnListarPaciente.Name = "btnListarPaciente";
@@ -95,6 +99,8 @@ namespace CapaPresentacion
                 btnListarPaciente.Width = 236;
                 btnListarPaciente.Height = 50;
                 btnListarPaciente.BackColor = Color.LightSkyBlue;
+                btnListarPaciente.FlatStyle = FlatStyle.Flat;
+                btnListarPaciente.ForeColor = SystemColors.HotTrack;
                 btnListarPaciente.Click += btnListarPaciente_Click;
 
                 btnModificarPaciente.Name = "btnModificarPaciente";
@@ -102,6 +108,8 @@ namespace CapaPresentacion
                 btnModificarPaciente.Width = 236;
                 btnModificarPaciente.Height = 50;
                 btnModificarPaciente.BackColor = Color.LightSkyBlue;
+                btnModificarPaciente.FlatStyle = FlatStyle.Flat;
+                btnModificarPaciente.ForeColor = SystemColors.HotTrack;
                 btnModificarPaciente.Click += btnModificarPaciente_Click;
 
                 btnEliminarPaciente.Name = "btnEliminarPaciente";
@@ -109,6 +117,8 @@ namespace CapaPresentacion
                 btnEliminarPaciente.Width = 236;
                 btnEliminarPaciente.Height = 50;
                 btnEliminarPaciente.BackColor = Color.LightSkyBlue;
+                btnEliminarPaciente.FlatStyle = FlatStyle.Flat;
+                btnEliminarPaciente.ForeColor = SystemColors.HotTrack;
                 btnEliminarPaciente.Click += btnEliminarPaciente_Click;
 
 
@@ -169,6 +179,8 @@ namespace CapaPresentacion
                 btnAgregarMedico.Width = 236;
                 btnAgregarMedico.Height = 50;
                 btnAgregarMedico.BackColor = Color.LightSkyBlue;
+                btnAgregarMedico.FlatStyle = FlatStyle.Flat;
+                btnAgregarMedico.ForeColor = SystemColors.HotTrack;
                 btnAgregarMedico.Click += btnAgregarMedico_Click;
 
 
@@ -177,6 +189,8 @@ namespace CapaPresentacion
                 btnEliminarMedico.Width = 236;
                 btnEliminarMedico.Height = 50;
                 btnEliminarMedico.BackColor = Color.LightSkyBlue;
+                btnEliminarMedico.FlatStyle = FlatStyle.Flat;
+                btnEliminarMedico.ForeColor = SystemColors.HotTrack;
                 btnEliminarMedico.Click += btnEliminarMedico_Click;
 
 
@@ -185,6 +199,8 @@ namespace CapaPresentacion
                 btnListarMedico.Width = 236;
                 btnListarMedico.Height = 50;
                 btnListarMedico.BackColor = Color.LightSkyBlue;
+                btnListarMedico.FlatStyle = FlatStyle.Flat;
+                btnListarMedico.ForeColor = SystemColors.HotTrack;
                 btnListarMedico.Click += btnListarMedico_Click;
 
 
@@ -193,6 +209,8 @@ namespace CapaPresentacion
                 btnModificarMedico.Width = 236;
                 btnModificarMedico.Height = 50;
                 btnModificarMedico.BackColor = Color.LightSkyBlue;
+                btnModificarMedico.FlatStyle = FlatStyle.Flat;
+                btnModificarMedico.ForeColor = SystemColors.HotTrack;
                 btnModificarMedico.Click += btnModificarMedico_Click;
 
                 flpMenu.Controls.Add(btnAgregarMedico);
@@ -220,6 +238,7 @@ namespace CapaPresentacion
 
         private void btnEliminarMedico_Click(object sender, EventArgs e)
         {
+            MostrarFormEnPanel(new EliminarMedicoView());
         }
 
         private void btnListarMedico_Click(object sender, EventArgs e)
@@ -229,6 +248,7 @@ namespace CapaPresentacion
 
         private void btnModificarMedico_Click(object sender, EventArgs e)
         {
+            MostrarFormEnPanel(new ModificarMedicoView());
         }
 
 
@@ -248,6 +268,8 @@ namespace CapaPresentacion
                 btnAgregarMedicamentos.Width = 236;
                 btnAgregarMedicamentos.Height = 50;
                 btnAgregarMedicamentos.BackColor = Color.LightSkyBlue;
+                btnAgregarMedicamentos.FlatStyle = FlatStyle.Flat;
+                btnAgregarMedicamentos.ForeColor = SystemColors.HotTrack;
                 btnAgregarMedicamentos.Click += btnAgregarMedicamentos_Click;
 
 
@@ -256,6 +278,8 @@ namespace CapaPresentacion
                 btnEliminarMedicamentos.Width = 236;
                 btnEliminarMedicamentos.Height = 50;
                 btnEliminarMedicamentos.BackColor = Color.LightSkyBlue;
+                btnEliminarMedicamentos.FlatStyle = FlatStyle.Flat;
+                btnEliminarMedicamentos.ForeColor = SystemColors.HotTrack;
                 btnEliminarMedicamentos.Click += btnEliminarMedicamentos_Click;
 
 
@@ -264,6 +288,8 @@ namespace CapaPresentacion
                 btnListarMedicamentos.Width = 236;
                 btnListarMedicamentos.Height = 50;
                 btnListarMedicamentos.BackColor = Color.LightSkyBlue;
+                btnListarMedicamentos.FlatStyle = FlatStyle.Flat;
+                btnListarMedicamentos.ForeColor = SystemColors.HotTrack;
                 btnListarMedicamentos.Click += btnListarMedicamentos_Click;
 
 
@@ -272,6 +298,8 @@ namespace CapaPresentacion
                 btnModificarMedicamentos.Width = 236;
                 btnModificarMedicamentos.Height = 50;
                 btnModificarMedicamentos.BackColor = Color.LightSkyBlue;
+                btnModificarMedicamentos.FlatStyle = FlatStyle.Flat;
+                btnModificarMedicamentos.ForeColor = SystemColors.HotTrack;
                 btnModificarMedicamentos.Click += btnModificarMedicamentos_Click;
 
                 flpMenu.Controls.Add(btnAgregarMedicamentos);
@@ -294,6 +322,7 @@ namespace CapaPresentacion
 
         private void btnAgregarMedicamentos_Click(object sender, EventArgs e)
         {
+            MostrarFormEnPanel(new AgregarMedicamento());
         }
 
         private void btnEliminarMedicamentos_Click(object sender, EventArgs e)
@@ -302,8 +331,7 @@ namespace CapaPresentacion
 
         private void btnListarMedicamentos_Click(object sender, EventArgs e)
         {
-            MedicamentoView medicamentoView = new MedicamentoView();
-            MostrarFormEnPanel(medicamentoView);
+            MostrarFormEnPanel(new ListarMedicamentoView());
         }
 
         private void btnModificarMedicamentos_Click(object sender, EventArgs e)
@@ -326,6 +354,8 @@ namespace CapaPresentacion
                 btnAgregarFacturacion.Width = 236;
                 btnAgregarFacturacion.Height = 50;
                 btnAgregarFacturacion.BackColor = Color.LightSkyBlue;
+                btnAgregarFacturacion.FlatStyle = FlatStyle.Flat;
+                btnAgregarFacturacion.ForeColor = SystemColors.HotTrack;
                 btnAgregarFacturacion.Click += btnAgregarFacturacion_Click;
 
 
@@ -334,6 +364,8 @@ namespace CapaPresentacion
                 btnEliminarFacturacion.Width = 236;
                 btnEliminarFacturacion.Height = 50;
                 btnEliminarFacturacion.BackColor = Color.LightSkyBlue;
+                btnEliminarFacturacion.FlatStyle = FlatStyle.Flat;
+                btnEliminarFacturacion.ForeColor = SystemColors.HotTrack;
                 btnEliminarFacturacion.Click += btnEliminarFacturacion_Click;
 
 
@@ -342,6 +374,8 @@ namespace CapaPresentacion
                 btnListarFacturacion.Width = 236;
                 btnListarFacturacion.Height = 50;
                 btnListarFacturacion.BackColor = Color.LightSkyBlue;
+                btnListarFacturacion.FlatStyle = FlatStyle.Flat;
+                btnListarFacturacion.ForeColor = SystemColors.HotTrack;
                 btnListarFacturacion.Click += btnListarFacturacion_Click;
 
 
@@ -350,6 +384,8 @@ namespace CapaPresentacion
                 btnModificarFacturacion.Width = 236;
                 btnModificarFacturacion.Height = 50;
                 btnModificarFacturacion.BackColor = Color.LightSkyBlue;
+                btnModificarFacturacion.FlatStyle = FlatStyle.Flat;
+                btnModificarFacturacion.ForeColor = SystemColors.HotTrack;
                 btnModificarFacturacion.Click += btnModificarFacturacion_Click;
 
                 flpMenu.Controls.Add(btnAgregarFacturacion);

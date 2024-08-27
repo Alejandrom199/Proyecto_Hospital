@@ -13,10 +13,11 @@ namespace CapaPresentacion.Paciente
 {
     public partial class AgregarPacienteView : Form
     {
-        private PacienteController controller = new PacienteController();
+        private PacienteController controller;
         public AgregarPacienteView()
         {
             InitializeComponent();
+            controller = new PacienteController();
         }
 
         private void setearCampos()
@@ -56,11 +57,12 @@ namespace CapaPresentacion.Paciente
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("Rellene todos los datos del Paciente");
+                MessageBox.Show("Rellene todos los datos del Paciente: ");
             }
         }
 

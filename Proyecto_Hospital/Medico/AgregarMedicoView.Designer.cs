@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarMedicoView));
             btnBorrarCampos = new Button();
-            btnAgregarPaciente = new Button();
+            btnAgregarMedico = new Button();
             cbxEspecialidad = new ComboBox();
             tbxTelefono = new TextBox();
             tbxCedula = new TextBox();
@@ -56,6 +56,8 @@
             btnHorario = new Button();
             btnEspecialidad = new Button();
             cbxSexo = new ComboBox();
+            dtpFechaNacimiento = new DateTimePicker();
+            label13 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +67,7 @@
             btnBorrarCampos.FlatStyle = FlatStyle.Flat;
             btnBorrarCampos.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnBorrarCampos.ForeColor = SystemColors.ControlLightLight;
-            btnBorrarCampos.Location = new Point(344, 519);
+            btnBorrarCampos.Location = new Point(344, 550);
             btnBorrarCampos.Name = "btnBorrarCampos";
             btnBorrarCampos.Size = new Size(182, 40);
             btnBorrarCampos.TabIndex = 40;
@@ -73,18 +75,19 @@
             btnBorrarCampos.UseVisualStyleBackColor = false;
             btnBorrarCampos.Click += btnBorrarCampos_Click;
             // 
-            // btnAgregarPaciente
+            // btnAgregarMedico
             // 
-            btnAgregarPaciente.BackColor = SystemColors.Highlight;
-            btnAgregarPaciente.FlatStyle = FlatStyle.Flat;
-            btnAgregarPaciente.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnAgregarPaciente.ForeColor = SystemColors.ControlLightLight;
-            btnAgregarPaciente.Location = new Point(135, 519);
-            btnAgregarPaciente.Name = "btnAgregarPaciente";
-            btnAgregarPaciente.Size = new Size(190, 40);
-            btnAgregarPaciente.TabIndex = 39;
-            btnAgregarPaciente.Text = "Agregar Medico";
-            btnAgregarPaciente.UseVisualStyleBackColor = false;
+            btnAgregarMedico.BackColor = SystemColors.Highlight;
+            btnAgregarMedico.FlatStyle = FlatStyle.Flat;
+            btnAgregarMedico.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAgregarMedico.ForeColor = SystemColors.ControlLightLight;
+            btnAgregarMedico.Location = new Point(135, 550);
+            btnAgregarMedico.Name = "btnAgregarMedico";
+            btnAgregarMedico.Size = new Size(190, 40);
+            btnAgregarMedico.TabIndex = 39;
+            btnAgregarMedico.Text = "Agregar Medico";
+            btnAgregarMedico.UseVisualStyleBackColor = false;
+            btnAgregarMedico.Click += btnAgregarMedico_Click;
             // 
             // cbxEspecialidad
             // 
@@ -105,14 +108,14 @@
             // 
             // tbxCedula
             // 
-            tbxCedula.Location = new Point(312, 180);
+            tbxCedula.Location = new Point(312, 140);
             tbxCedula.Name = "tbxCedula";
             tbxCedula.Size = new Size(277, 31);
             tbxCedula.TabIndex = 33;
             // 
             // tbxApellidos
             // 
-            tbxApellidos.Location = new Point(312, 140);
+            tbxApellidos.Location = new Point(312, 100);
             tbxApellidos.Name = "tbxApellidos";
             tbxApellidos.Size = new Size(277, 31);
             tbxApellidos.TabIndex = 32;
@@ -120,7 +123,7 @@
             // tbxNombre
             // 
             tbxNombre.ForeColor = SystemColors.WindowText;
-            tbxNombre.Location = new Point(312, 100);
+            tbxNombre.Location = new Point(312, 60);
             tbxNombre.Name = "tbxNombre";
             tbxNombre.Size = new Size(277, 31);
             tbxNombre.TabIndex = 31;
@@ -130,7 +133,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.HotTrack;
-            label12.Location = new Point(206, 30);
+            label12.Location = new Point(206, 10);
             label12.Name = "label12";
             label12.Size = new Size(242, 32);
             label12.TabIndex = 30;
@@ -175,7 +178,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(70, 180);
+            label3.Location = new Point(70, 140);
             label3.Name = "label3";
             label3.Size = new Size(70, 25);
             label3.TabIndex = 24;
@@ -184,7 +187,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(70, 140);
+            label2.Location = new Point(70, 100);
             label2.Name = "label2";
             label2.Size = new Size(90, 25);
             label2.TabIndex = 23;
@@ -193,7 +196,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(70, 100);
+            label1.Location = new Point(70, 60);
             label1.Name = "label1";
             label1.Size = new Size(87, 25);
             label1.TabIndex = 22;
@@ -324,12 +327,30 @@
             cbxSexo.Size = new Size(277, 33);
             cbxSexo.TabIndex = 52;
             // 
+            // dtpFechaNacimiento
+            // 
+            dtpFechaNacimiento.Location = new Point(267, 180);
+            dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            dtpFechaNacimiento.Size = new Size(322, 31);
+            dtpFechaNacimiento.TabIndex = 86;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(70, 180);
+            label13.Name = "label13";
+            label13.Size = new Size(181, 25);
+            label13.TabIndex = 85;
+            label13.Text = "Fecha de Nacimiento:";
+            // 
             // AgregarMedicoView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1014, 596);
+            Controls.Add(dtpFechaNacimiento);
+            Controls.Add(label13);
             Controls.Add(cbxSexo);
             Controls.Add(btnEspecialidad);
             Controls.Add(btnHorario);
@@ -341,7 +362,7 @@
             Controls.Add(label9);
             Controls.Add(pictureBox1);
             Controls.Add(btnBorrarCampos);
-            Controls.Add(btnAgregarPaciente);
+            Controls.Add(btnAgregarMedico);
             Controls.Add(cbxEspecialidad);
             Controls.Add(tbxTelefono);
             Controls.Add(tbxNumeroLicencia);
@@ -369,7 +390,7 @@
         #endregion
 
         private Button btnBorrarCampos;
-        private Button btnAgregarPaciente;
+        private Button btnAgregarMedico;
         private ComboBox cbxEspecialidad;
         private TextBox tbxTelefono;
         private TextBox tbxCedula;
@@ -395,5 +416,7 @@
         private Button btnHorario;
         private Button btnEspecialidad;
         private ComboBox cbxSexo;
+        private DateTimePicker dtpFechaNacimiento;
+        private Label label13;
     }
 }

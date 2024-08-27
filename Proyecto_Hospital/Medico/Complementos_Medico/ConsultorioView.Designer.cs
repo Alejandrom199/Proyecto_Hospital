@@ -127,7 +127,7 @@
             // 
             // tbxNombre
             // 
-            tbxNombre.Location = new Point(446, 64);
+            tbxNombre.Location = new Point(412, 64);
             tbxNombre.Name = "tbxNombre";
             tbxNombre.Size = new Size(150, 31);
             tbxNombre.TabIndex = 17;
@@ -137,13 +137,13 @@
             tbxId.Location = new Point(80, 64);
             tbxId.Name = "tbxId";
             tbxId.ReadOnly = true;
-            tbxId.Size = new Size(109, 31);
+            tbxId.Size = new Size(80, 31);
             tbxId.TabIndex = 16;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(358, 64);
+            label2.Location = new Point(324, 64);
             label2.Name = "label2";
             label2.Size = new Size(82, 25);
             label2.TabIndex = 15;
@@ -164,9 +164,9 @@
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrar.ForeColor = SystemColors.ControlLightLight;
-            btnCerrar.Location = new Point(738, 16);
+            btnCerrar.Location = new Point(743, 16);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(50, 50);
+            btnCerrar.Size = new Size(40, 40);
             btnCerrar.TabIndex = 13;
             btnCerrar.Text = "X";
             btnCerrar.UseVisualStyleBackColor = false;
@@ -174,7 +174,7 @@
             // 
             // tbxPiso
             // 
-            tbxPiso.Location = new Point(660, 64);
+            tbxPiso.Location = new Point(626, 64);
             tbxPiso.Name = "tbxPiso";
             tbxPiso.Size = new Size(59, 31);
             tbxPiso.TabIndex = 25;
@@ -182,7 +182,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(605, 64);
+            label4.Location = new Point(571, 64);
             label4.Name = "label4";
             label4.Size = new Size(49, 25);
             label4.TabIndex = 24;
@@ -191,7 +191,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(199, 64);
+            label5.Location = new Point(165, 64);
             label5.Name = "label5";
             label5.Size = new Size(81, 25);
             label5.TabIndex = 26;
@@ -199,7 +199,7 @@
             // 
             // tbxNumero
             // 
-            tbxNumero.Location = new Point(281, 64);
+            tbxNumero.Location = new Point(247, 64);
             tbxNumero.Name = "tbxNumero";
             tbxNumero.Size = new Size(67, 31);
             tbxNumero.TabIndex = 27;

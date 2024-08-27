@@ -9,53 +9,60 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaPresentacion.Medico
+namespace CapaPresentacion.Medicamento.Complementos_Medicamentos
 {
-    public partial class ConsultorioView : Form
+    public partial class ProveedorView : Form
     {
-        ConsultorioController controller;
+        ProveedorController controller;
         private bool isNuevo;
-        public ConsultorioView()
+        public ProveedorView()
         {
             InitializeComponent();
-            controller = new ConsultorioController();
+            controller = new ProveedorController();
             btnNuevo.Enabled = true;
             btnAgregar.Enabled = false;
             btnModificar.Enabled = false;
             btnEliminar.Enabled = false;
             HabilitarCampos(false);
         }
-
         private void SetearCampos()
         {
             tbxId.Text = string.Empty;
-            tbxNumero.Text = string.Empty;
             tbxNombre.Text = string.Empty;
-            tbxPiso.Text = string.Empty;
+            tbxTelefono.Text = string.Empty;
+            tbxDireccion.Text = string.Empty;
+            tbxEmail.Text = string.Empty;
+            tbxNombreContacto.Text = string.Empty;
         }
 
         private void HabilitarCampos(bool opcion)
         {
             tbxId.Enabled = opcion;
-            tbxNumero.Enabled = opcion;
             tbxNombre.Enabled = opcion;
-            tbxPiso.Enabled = opcion;
+            tbxTelefono.Enabled = opcion;
+            tbxDireccion.Enabled = opcion;
+            tbxEmail.Enabled = opcion;
+            tbxNombreContacto.Enabled = opcion;
         }
 
         /**
          * Método para actualizar el DataGridView
          **/
-        private void CargarGridConsultorio()
+        private void CargarGridProveedor()
         {
             try
             {
-                dgvConsultorio.AllowUserToAddRows = false;
-                dgvConsultorio.DataSource = controller.GetListaConsultorios();
+                dgvProveedor.AllowUserToAddRows = false;
+                dgvProveedor.DataSource = controller.GetListaProveedores();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -77,18 +84,20 @@ namespace CapaPresentacion.Medico
             {
                 try
                 {
-                    int numero = Convert.ToInt32(tbxNumero.Text);
                     string nombre = tbxNombre.Text.ToUpper();
-                    int piso = Convert.ToInt32(tbxPiso.Text);
+                    string direccion = tbxDireccion.Text;
+                    string telefono = tbxTelefono.Text;
+                    string email = tbxEmail.Text;
+                    string nombre_contacto = tbxNombreContacto.Text;
 
                     //MessageBox.Show(numero_consultorio.ToString());
 
-                    var resultado = controller.AgregarConsultorio(numero, nombre, piso);
+                    var resultado = controller.AgregarProveedor(nombre, direccion, telefono, email, nombre_contacto);
 
                     if (resultado)
                     {
                         MessageBox.Show("Registro Creado con Éxito.");
-                        CargarGridConsultorio();
+                        CargarGridProveedor();
                         HabilitarCampos(false);
 
                         btnNuevo.Enabled = true;
@@ -102,7 +111,7 @@ namespace CapaPresentacion.Medico
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Rellene todos los datos "+ex.Message);
+                    MessageBox.Show("Rellene todos los datos " + ex.Message);
                 }
 
             }
@@ -113,14 +122,16 @@ namespace CapaPresentacion.Medico
             if (!isNuevo)
             {
                 int id = Convert.ToInt32(tbxId.Text);
-                int numero = Convert.ToInt32(tbxNumero.Text);
-                string nombre = tbxNombre.Text;
-                int piso = Convert.ToInt32(tbxPiso.Text);
+                string nombre = tbxNombre.Text.ToUpper();
+                string direccion = tbxDireccion.Text;
+                string telefono = tbxTelefono.Text;
+                string email = tbxEmail.Text;
+                string nombre_contacto = tbxNombreContacto.Text;
 
-                if (controller.ModificarConsultorio(id, numero, nombre, piso))
+                if (controller.ModificarProveedor(id, nombre, direccion, telefono, email, nombre_contacto))
                 {
-                    MessageBox.Show("Consultorio actualizada!");
-                    CargarGridConsultorio();
+                    MessageBox.Show("Proveedor actualizada!");
+                    CargarGridProveedor();
                     HabilitarCampos(false);
 
                     btnNuevo.Enabled = true;
@@ -130,7 +141,7 @@ namespace CapaPresentacion.Medico
                 }
                 else
                 {
-                    MessageBox.Show("Consultorio no pudo ser actualizada!");
+                    MessageBox.Show("Proveedor no pudo ser actualizada!");
                 }
             }
         }
@@ -141,14 +152,14 @@ namespace CapaPresentacion.Medico
 
             try
             {
-                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar el Consultorio?", "Eliminar Consultorio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar el Proveedor?", "Eliminar Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
                 {
-                    if (controller.EliminarConsultorio(id))
+                    if (controller.EliminarProveedor(id))
                     {
                         MessageBox.Show("Consultorio eliminado!");
-                        CargarGridConsultorio();
+                        CargarGridProveedor();
 
                         btnNuevo.Enabled = true;
                         btnAgregar.Enabled = false;
@@ -159,7 +170,7 @@ namespace CapaPresentacion.Medico
                     }
                     else
                     {
-                        MessageBox.Show("Consultorio no pudo ser eliminado!");
+                        MessageBox.Show("Proveedor no pudo ser eliminado!");
                     }
                 }
                 else if (resultado == DialogResult.No)
@@ -169,28 +180,23 @@ namespace CapaPresentacion.Medico
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar: "+ex.Message);
+                MessageBox.Show("Error al eliminar: " + ex.Message);
             }
         }
 
-        private void ConsultorioView_Load(object sender, EventArgs e)
-        {
-            CargarGridConsultorio();
-        }
-
-
-
-        private void dgvConsultorio_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvProveedor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HabilitarCampos(true);
             isNuevo = false;
 
             if (e.RowIndex != -1)
             {
-                tbxId.Text = dgvConsultorio.Rows[e.RowIndex].Cells[0].Value.ToString();
-                tbxNumero.Text = dgvConsultorio.Rows[e.RowIndex].Cells[1].Value.ToString();
-                tbxNombre.Text = dgvConsultorio.Rows[e.RowIndex].Cells[2].Value.ToString();
-                tbxPiso.Text = dgvConsultorio.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tbxId.Text = dgvProveedor.Rows[e.RowIndex].Cells[0].Value.ToString();
+                tbxNombre.Text = dgvProveedor.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tbxDireccion.Text = dgvProveedor.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tbxTelefono.Text = dgvProveedor.Rows[e.RowIndex].Cells[3].Value.ToString();
+                tbxEmail.Text = dgvProveedor.Rows[e.RowIndex].Cells[4].Value.ToString();
+                tbxNombreContacto.Text = dgvProveedor.Rows[e.RowIndex].Cells[5].Value.ToString();
 
                 btnNuevo.Enabled = false;
                 btnAgregar.Enabled = false;
@@ -199,9 +205,9 @@ namespace CapaPresentacion.Medico
             }
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+        private void ProveedorView_Load(object sender, EventArgs e)
         {
-            Dispose();
+            CargarGridProveedor();
         }
     }
 }

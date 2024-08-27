@@ -19,6 +19,11 @@ namespace CapaPresentacion.Medico
         {
             InitializeComponent();
             controller = new HorarioController();
+            btnNuevo.Enabled = true;
+            btnAgregar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnEliminar.Enabled = false;
+            HabilitarCampos(false);
         }
         private void SetearCampos()
         {
@@ -96,7 +101,7 @@ namespace CapaPresentacion.Medico
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Rellene todos los datos");
+                    MessageBox.Show("Rellene todos los datos, "+ex.Message);
                 }
             }
         }
@@ -131,7 +136,7 @@ namespace CapaPresentacion.Medico
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Formato de Hora no válido, usar formato '00:00'.");
+                    MessageBox.Show("Formato de Hora no válido, usar formato '00:00'., "+ex.Message);
                 }
             }
         }
@@ -170,7 +175,7 @@ namespace CapaPresentacion.Medico
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar");
+                MessageBox.Show("Error al eliminar, "+ex.Message);
             }
         }
 

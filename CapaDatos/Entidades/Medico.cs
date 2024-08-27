@@ -12,29 +12,31 @@ namespace CapaDatos.Entidades
         private string nombre;
         private string apellido;
         private string cedula;
-        private Especialidad especialidad;
+        private DateTime fecha_nacimiento;
+        private int especialidad_id;
         private string numero_licencia;
         private string sexo;
         private string telefono;
         private string email;
-        private Horario horario_atencion;
-        private Consultorio consultorio;
+        private int horario_atencion_id;
+        private int consultorio_id;
         private DateTime fecha_contratacion;
 
         // Constructor parametrizado
-        public Medico(int id_medico, string nombre, string apellido, string cedula, Especialidad especialidad, string numero_licencia, string sexo, string telefono, string email, Horario horario_atencion, Consultorio consultorio, DateTime fecha_contratacion)
+        public Medico(int id_medico, string nombre, string apellido, string cedula, DateTime fecha_nacimiento, int especialidad_id, string numero_licencia, string sexo, string telefono, string email, int horario_atencion_id, int consultorio_id, DateTime fecha_contratacion)
         {
             this.id_medico = id_medico;
             this.nombre = nombre;
             this.apellido = apellido;
             this.cedula = cedula;
-            this.especialidad = especialidad;
+            this.fecha_nacimiento = fecha_nacimiento;
+            this.especialidad_id = especialidad_id;
             this.numero_licencia = numero_licencia;
             this.sexo = sexo;
             this.telefono = telefono;
             this.email = email;
-            this.horario_atencion = horario_atencion;
-            this.consultorio = consultorio;
+            this.horario_atencion_id = horario_atencion_id;
+            this.consultorio_id = consultorio_id;
             this.fecha_contratacion = fecha_contratacion;
         }
 
@@ -45,13 +47,14 @@ namespace CapaDatos.Entidades
             nombre = string.Empty;
             apellido = string.Empty;
             cedula = string.Empty;
-            especialidad = null;
+            fecha_nacimiento = DateTime.Now;
+            especialidad_id = 0;
             numero_licencia = string.Empty;
             sexo = string.Empty;
             telefono = string.Empty;
             email = string.Empty;
-            horario_atencion = null;
-            consultorio = null;
+            horario_atencion_id = 0;
+            consultorio_id = 0;
             fecha_contratacion = DateTime.Now;
         }
 
@@ -80,10 +83,15 @@ namespace CapaDatos.Entidades
             set { cedula = value; }
         }
 
-        public Especialidad Especialidad
+        public DateTime FechaNacimiento
         {
-            get { return especialidad; }
-            set { especialidad = value; }
+            get { return fecha_nacimiento; }
+            set { fecha_nacimiento = value; }
+        }
+        public int EspecialidadId
+        {
+            get { return especialidad_id; }
+            set { especialidad_id = value; }
         }
 
         public string NumeroLicencia
@@ -110,16 +118,17 @@ namespace CapaDatos.Entidades
             set { email = value; }
         }
 
-        public Horario HorarioAtencion
+        public int HorarioAtencionId
+
         {
-            get { return horario_atencion; }
-            set { horario_atencion = value; }
+            get { return horario_atencion_id; }
+            set { horario_atencion_id = value; }
         }
 
-        public Consultorio Consultorio
+        public int ConsultorioId
         {
-            get { return consultorio; }
-            set { consultorio = value; }
+            get { return consultorio_id; }
+            set { consultorio_id = value; }
         }
 
         public DateTime FechaContratacion

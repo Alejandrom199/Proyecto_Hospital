@@ -39,12 +39,9 @@
             btnCerrar = new Button();
             flpMenu = new FlowLayoutPanel();
             pnlViews = new Panel();
-            pictureBox2 = new PictureBox();
             pnlBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             flpMenu.SuspendLayout();
-            pnlViews.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // btnMedicamentos
@@ -81,7 +78,7 @@
             // 
             // btnPacientes
             // 
-            btnPacientes.BackColor = SystemColors.Highlight;
+            btnPacientes.BackColor = SystemColors.MenuHighlight;
             btnPacientes.Cursor = Cursors.Hand;
             btnPacientes.FlatStyle = FlatStyle.Flat;
             btnPacientes.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
@@ -138,13 +135,13 @@
             // 
             // btnMinimizar
             // 
-            btnMinimizar.BackColor = SystemColors.ActiveCaption;
+            btnMinimizar.BackColor = SystemColors.GradientActiveCaption;
             btnMinimizar.FlatStyle = FlatStyle.Flat;
             btnMinimizar.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMinimizar.ForeColor = SystemColors.ControlLightLight;
-            btnMinimizar.Location = new Point(1159, 12);
+            btnMinimizar.ForeColor = SystemColors.ActiveCaption;
+            btnMinimizar.Location = new Point(1182, 12);
             btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.Size = new Size(50, 50);
+            btnMinimizar.Size = new Size(40, 40);
             btnMinimizar.TabIndex = 2;
             btnMinimizar.Text = "__";
             btnMinimizar.TextAlign = ContentAlignment.TopCenter;
@@ -157,9 +154,9 @@
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrar.ForeColor = SystemColors.ControlLightLight;
-            btnCerrar.Location = new Point(1218, 12);
+            btnCerrar.Location = new Point(1228, 12);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(50, 50);
+            btnCerrar.Size = new Size(40, 40);
             btnCerrar.TabIndex = 1;
             btnCerrar.Text = "X";
             btnCerrar.UseVisualStyleBackColor = false;
@@ -180,23 +177,12 @@
             // 
             // pnlViews
             // 
-            pnlViews.BackColor = Color.LightGray;
-            pnlViews.Controls.Add(pictureBox2);
+            pnlViews.BackColor = SystemColors.InactiveCaption;
             pnlViews.Dock = DockStyle.Fill;
             pnlViews.Location = new Point(244, 80);
             pnlViews.Name = "pnlViews";
             pnlViews.Size = new Size(1036, 640);
             pnlViews.TabIndex = 10;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.DarkGray;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(6, 6);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(1027, 643);
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
             // 
             // MenuView
             // 
@@ -214,8 +200,6 @@
             pnlBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             flpMenu.ResumeLayout(false);
-            pnlViews.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -228,7 +212,6 @@
         private Panel pnlBar;
         private FlowLayoutPanel flpMenu;
         private Panel pnlViews;
-        private PictureBox pictureBox2;
         private Button btnCerrar;
         private Button btnMinimizar;
         private PictureBox pictureBox1;

@@ -34,7 +34,6 @@ namespace CapaPresentacion.Paciente
             tbxDireccion.Enabled = opcion;
             tbxTelefono.Enabled = opcion;
             tbxEmail.Enabled = opcion;
-            dtpFechaRegistro.Enabled = opcion;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -53,14 +52,13 @@ namespace CapaPresentacion.Paciente
                     tbxDireccion.Text = pacienteInfo["Direccion"].ToString();
                     tbxTelefono.Text = pacienteInfo["Telefono"].ToString();
                     tbxEmail.Text = pacienteInfo["Email"].ToString();
-                    dtpFechaRegistro.Value = Convert.ToDateTime(pacienteInfo["FechaRegistro"]);
 
                     btnEliminarPaciente.Enabled = true;
                     estaEncontrado = true;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("ID no registrado como Paciente");
+                    MessageBox.Show("ID no registrado como Paciente: "+ex.Message);
                     estaEncontrado = false;
                     btnEliminarPaciente.Enabled = false;
                 }

@@ -29,7 +29,7 @@ namespace CapaPresentacion.Medico
             tbxNumeroLicencia.Text = string.Empty;
             cbxSexo.Text = string.Empty;
             tbxTelefono.Text = string.Empty;
-            tbxEmail.Text = string .Empty;
+            tbxEmail.Text = string.Empty;
             cbxHorario.Text = string.Empty;
             cbxConsultorio.Text = string.Empty;
         }
@@ -90,6 +90,48 @@ namespace CapaPresentacion.Medico
         private void btnBorrarCampos_Click(object sender, EventArgs e)
         {
             setearCampos();
+        }
+
+        private void btnAgregarMedico_Click(object sender, EventArgs e)
+        {
+            if (tbxNombre.Text != "" && tbxApellidos.Text != "" && tbxCedula.Text != "" && dtpFechaNacimiento.Text != "" && cbxEspecialidad.Text != "" && tbxNumeroLicencia.Text != "" && cbxSexo.Text != "" && tbxTelefono.Text != "" && tbxEmail.Text != "" && cbxHorario.Text != "" && cbxConsultorio.Text != "")
+            {
+                try
+                {
+                    string nombre = tbxNombre.Text;
+                    string apellido = tbxApellidos.Text;
+                    string cedula = tbxCedula.Text;
+                    DateTime fecha_nacimiento = dtpFechaNacimiento.Value;
+                    int especialidad_id = controller.ObtenerIdEspecialidadParaMedico(cbxEspecialidad.Text);
+                    string numeroLicencia = tbxNumeroLicencia.Text;
+                    string sexo = cbxSexo.Text;
+                    string telefono = tbxTelefono.Text;
+                    string email = tbxEmail.Text;
+
+                    string[] partesHorario = cbxHorario.Text.Split(" - ");
+                    TimeSpan parteHorario1 = TimeSpan.Parse(partesHorario[0]);
+                    TimeSpan parteHorario2 = TimeSpan.Parse(partesHorario[1]);
+                    int horario_id = controller.ObtenerIdHorarioParaMedico(parteHorario1, parteHorario2);
+
+                    int consultorio_id = controller.ObtenerIdConsultorioParaMedico(cbxConsultorio.Text);
+
+
+                    var resultado = controller.AgregarMedico(nombre,apellido,cedula,fecha_nacimiento,especialidad_id,numeroLicencia,sexo,telefono,email,horario_id,consultorio_id);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Registro de Médico creado con Éxito.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Rellene todos los datos del Médico");
+            }
         }
     }
 }

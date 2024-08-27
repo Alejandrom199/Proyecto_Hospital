@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class ListarMedicoView
+    partial class ListarMedicamentoView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvMedicos = new DataGridView();
+            dgvMedicamentos = new DataGridView();
             tbxValor = new TextBox();
             btnBuscarMedico = new Button();
             lblValor = new Label();
             cbxFiltro = new ComboBox();
             label2 = new Label();
             label12 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvMedicos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).BeginInit();
             SuspendLayout();
             // 
-            // dgvMedicos
+            // dgvMedicamentos
             // 
-            dgvMedicos.BackgroundColor = SystemColors.InactiveCaption;
-            dgvMedicos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvMedicos.Location = new Point(12, 171);
-            dgvMedicos.Name = "dgvMedicos";
-            dgvMedicos.RowHeadersWidth = 62;
-            dgvMedicos.Size = new Size(990, 414);
-            dgvMedicos.TabIndex = 0;
-            dgvMedicos.CellContentClick += dgvMedicos_CellContentClick;
+            dgvMedicamentos.BackgroundColor = SystemColors.InactiveCaption;
+            dgvMedicamentos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMedicamentos.Location = new Point(12, 171);
+            dgvMedicamentos.Name = "dgvMedicamentos";
+            dgvMedicamentos.RowHeadersWidth = 62;
+            dgvMedicamentos.Size = new Size(990, 414);
+            dgvMedicamentos.TabIndex = 0;
             // 
             // tbxValor
             // 
             tbxValor.Location = new Point(449, 125);
             tbxValor.Name = "tbxValor";
             tbxValor.Size = new Size(214, 31);
-            tbxValor.TabIndex = 24;
+            tbxValor.TabIndex = 30;
             // 
             // btnBuscarMedico
             // 
@@ -65,9 +64,9 @@
             btnBuscarMedico.ForeColor = SystemColors.ControlLightLight;
             btnBuscarMedico.Location = new Point(679, 125);
             btnBuscarMedico.Name = "btnBuscarMedico";
-            btnBuscarMedico.Size = new Size(188, 34);
-            btnBuscarMedico.TabIndex = 23;
-            btnBuscarMedico.Text = "Buscar Médico";
+            btnBuscarMedico.Size = new Size(214, 34);
+            btnBuscarMedico.TabIndex = 29;
+            btnBuscarMedico.Text = "Buscar Medicamento";
             btnBuscarMedico.UseVisualStyleBackColor = false;
             // 
             // lblValor
@@ -76,7 +75,7 @@
             lblValor.Location = new Point(366, 125);
             lblValor.Name = "lblValor";
             lblValor.Size = new Size(56, 25);
-            lblValor.TabIndex = 22;
+            lblValor.TabIndex = 28;
             lblValor.Text = "Valor:";
             lblValor.TextAlign = ContentAlignment.MiddleRight;
             // 
@@ -87,7 +86,7 @@
             cbxFiltro.Location = new Point(110, 125);
             cbxFiltro.Name = "cbxFiltro";
             cbxFiltro.Size = new Size(227, 33);
-            cbxFiltro.TabIndex = 21;
+            cbxFiltro.TabIndex = 27;
             // 
             // label2
             // 
@@ -95,7 +94,7 @@
             label2.Location = new Point(10, 125);
             label2.Name = "label2";
             label2.Size = new Size(93, 25);
-            label2.TabIndex = 20;
+            label2.TabIndex = 26;
             label2.Text = "Filtrar por:";
             // 
             // label12
@@ -103,13 +102,13 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.HotTrack;
-            label12.Location = new Point(370, 10);
+            label12.Location = new Point(331, 10);
             label12.Name = "label12";
-            label12.Size = new Size(265, 32);
-            label12.TabIndex = 19;
-            label12.Text = "LISTADO DE MÉDICOS";
+            label12.Size = new Size(350, 32);
+            label12.TabIndex = 25;
+            label12.Text = "LISTADO DE MEDICAMENTOS";
             // 
-            // ListarMedicoView
+            // ListarMedicamentoView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -121,19 +120,19 @@
             Controls.Add(cbxFiltro);
             Controls.Add(label2);
             Controls.Add(label12);
-            Controls.Add(dgvMedicos);
+            Controls.Add(dgvMedicamentos);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ListarMedicoView";
-            Text = "MedicoView";
-            Load += MedicoView_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvMedicos).EndInit();
+            Name = "ListarMedicamentoView";
+            Text = "MedicamentoView";
+            Load += MedicamentoView_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvMedicamentos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dgvMedicos;
+        private DataGridView dgvMedicamentos;
         private TextBox tbxValor;
         private Button btnBuscarMedico;
         private Label lblValor;

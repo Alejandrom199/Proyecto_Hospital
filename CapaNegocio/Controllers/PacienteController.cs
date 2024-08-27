@@ -8,7 +8,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CapaNegocio.Controllers
 {
@@ -136,7 +135,7 @@ namespace CapaNegocio.Controllers
         /**
          * Método para realizar una modificación de un Paciente
          **/
-        public bool ModificarPaciente(int id, string nombre, string apellido, string cedula, DateTime fecha_nacimiento, string sexo, string direccion, string telefono, string email, DateTime fecha_registro)
+        public bool ModificarPaciente(int id, string nombre, string apellido, string cedula, DateTime fecha_nacimiento, string sexo, string direccion, string telefono, string email)
         {
             try
             {
@@ -150,8 +149,7 @@ namespace CapaNegocio.Controllers
                     Sexo = sexo,
                     Direccion = direccion,
                     Telefono = telefono,
-                    Email = email,
-                    FechaRegistro = fecha_registro
+                    Email = email
                 };
 
                 return interface_paciente.modificar(paciente);

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class MedicamentoView : Form
+    public partial class ListarMedicamentoView : Form
     {
         private MedicamentoController controller;
-        public MedicamentoView()
+        public ListarMedicamentoView()
         {
             InitializeComponent();
             controller = new MedicamentoController();

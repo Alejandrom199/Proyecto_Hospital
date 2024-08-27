@@ -38,26 +38,6 @@ namespace CapaPersistencia
             }
         }
 
-        public object EjecutarSPSelectScalar(string storedProcedureName, SqlParameter[] parameters)
-        {
-            var command = new SqlCommand();
-            command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = storedProcedureName;
-
-            if (parameters != null)
-            {
-                command.Parameters.AddRange(parameters);
-            }
-
-            command.Connection = conn.AbrirConexion();
-
-            // Utiliza ExecuteScalar para obtener un solo valor
-            object result = command.ExecuteScalar();
-
-            conn.CerrarConexion();
-
-            return result;
-        }
 
         public DataTable EjecutarSPSelect(string storedProcedureName, SqlParameter[] parameters)
         {
@@ -79,6 +59,70 @@ namespace CapaPersistencia
                 conn.CerrarConexion();
                 return tabla;
             }
+        }
+
+        public int EjecutarSPSelectInt(string storedProcedureName, SqlParameter[] parameters)
+        {
+            int resultado = 0;
+
+            var command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = storedProcedureName;
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            command.Connection = conn.AbrirConexion();
+
+            try
+            {
+                // Ejecuta el comando y obtiene el valor como entero
+                var result = command.ExecuteScalar();
+                if (result != null && int.TryParse(result.ToString(), out int parsedResult))
+                {
+                    resultado = parsedResult;
+                }
+            }
+            finally
+            {
+                conn.CerrarConexion();
+            }
+
+            return resultado;
+        }
+
+        public string EjecutarSPSelectString(string storedProcedureName, SqlParameter[] parameters)
+        {
+            string resultado = "";
+
+            var command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = storedProcedureName;
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            command.Connection = conn.AbrirConexion();
+
+            try
+            {
+                // Ejecuta el comando y obtiene el valor como entero
+                var result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    resultado = result.ToString();
+                }
+            }
+            finally
+            {
+                conn.CerrarConexion();
+            }
+
+            return resultado;
         }
 
         public Dictionary<string, object> EjecutarSPSelectPaciente(string storedProcedureName, SqlParameter[] parameters)
@@ -116,7 +160,43 @@ namespace CapaPersistencia
             return pacienteDict;
         }
 
-        public Dictionary<int, string> EjecutarSPSelectUnCampo(string storedProcedureName, string campo,SqlParameter[] parameters)
+        public Dictionary<string, object> EjecutarSPSelectMedico(string storedProcedureName, SqlParameter[] parameters)
+        {
+            var medicoDict = new Dictionary<string, object>();
+            var command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = storedProcedureName;
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            command.Connection = conn.AbrirConexion();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                medicoDict["Nombre"] = reader["nombre"];
+                medicoDict["Apellido"] = reader["apellido"];
+                medicoDict["Cedula"] = reader["cedula"];
+                medicoDict["FechaNacimiento"] = reader["fecha_nacimiento"];
+                medicoDict["EspecialidadId"] = reader["especialidad_id"];
+                medicoDict["NumeroLicencia"] = reader["numero_licencia"];
+                medicoDict["Sexo"] = reader["sexo"];
+                medicoDict["Telefono"] = reader["telefono"];
+                medicoDict["Email"] = reader["email"];
+                medicoDict["HorarioAtencionId"] = reader["horario_atencion_id"];
+                medicoDict["ConsultorioId"] = reader["consultorio_id"];
+                medicoDict["FechaContratacion"] = reader["fecha_contratacion"];
+            }
+
+            reader.Close();
+            conn.CerrarConexion();
+            return medicoDict;
+        }
+
+        public Dictionary<int, string> EjecutarSPSelectIntToStringUnCampo(string storedProcedureName, string campo, SqlParameter[] parameters)
         {
             var campoDict = new Dictionary<int, string>();
             var command = new SqlCommand();
@@ -133,10 +213,10 @@ namespace CapaPersistencia
 
             while (reader.Read())
             {
-                int id = Convert.ToInt32(reader["id"]);
-                string nombre = reader[campo].ToString();
+                int key = Convert.ToInt32(reader["id"]);
+                string value = reader[campo].ToString();
 
-                campoDict[id] = nombre;
+                campoDict[key] = value;
             }
 
             reader.Close();
@@ -144,7 +224,7 @@ namespace CapaPersistencia
             return campoDict;
         }
 
-        public Dictionary<int, string> EjecutarSPSelectDosCampos(string storedProcedureName, string campo1, string campo2, SqlParameter[] parameters)
+        public Dictionary<int, string> EjecutarSPSelectIntToStringDosCampos(string storedProcedureName, string campo1, string campo2, SqlParameter[] parameters)
         {
             var campoDict = new Dictionary<int, string>();
             var command = new SqlCommand();
@@ -161,10 +241,10 @@ namespace CapaPersistencia
 
             while (reader.Read())
             {
-                int id = Convert.ToInt32(reader["id"]);
-                string nombre = reader[campo1].ToString() + " - " + reader[campo2].ToString() ;
+                int key = Convert.ToInt32(reader["id"]);
+                string value = reader[campo1].ToString() + " - " + reader[campo2].ToString();
 
-                campoDict[id] = nombre;
+                campoDict[key] = value;
             }
 
             reader.Close();

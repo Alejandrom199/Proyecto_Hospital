@@ -38,7 +38,6 @@ namespace CapaPresentacion.Paciente
             tbxDireccion.Enabled = opcion;
             tbxTelefono.Enabled = opcion;
             tbxEmail.Enabled = opcion;
-            dtpFechaRegistro.Enabled = opcion;
             btnModificarPaciente.Enabled = opcion;
             btnBorrarCampos.Enabled = opcion;
         }
@@ -53,7 +52,6 @@ namespace CapaPresentacion.Paciente
             tbxDireccion.Text = string.Empty;
             tbxTelefono.Text = string.Empty;
             tbxEmail.Text = string.Empty;
-            dtpFechaRegistro.Value = DateTime.Now;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -72,7 +70,6 @@ namespace CapaPresentacion.Paciente
                     tbxDireccion.Text = pacienteInfo["Direccion"].ToString();
                     tbxTelefono.Text = pacienteInfo["Telefono"].ToString();
                     tbxEmail.Text = pacienteInfo["Email"].ToString();
-                    dtpFechaRegistro.Value = Convert.ToDateTime(pacienteInfo["FechaRegistro"]);
 
                     habilitarCampos(true);
                     estaEncontrado = true;
@@ -112,9 +109,8 @@ namespace CapaPresentacion.Paciente
                     string direccion = tbxDireccion.Text;
                     string telefono = tbxTelefono.Text;
                     string email = tbxEmail.Text;
-                    DateTime fecha_registro = DateTime.Now;
 
-                    var resultado = controller.ModificarPaciente(id,nombre, apellido, cedula, fecha_nacimiento, sexo, direccion, telefono, email, fecha_registro);
+                    var resultado = controller.ModificarPaciente(id,nombre, apellido, cedula, fecha_nacimiento, sexo, direccion, telefono, email);
 
                     if (resultado)
                     {
@@ -124,7 +120,7 @@ namespace CapaPresentacion.Paciente
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Rellene todos los datos del Paciente");
+                MessageBox.Show("Rellene todos los datos del Paciente: "+ex.Message);
             }
         }
     }

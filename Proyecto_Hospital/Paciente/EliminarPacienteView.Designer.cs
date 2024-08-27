@@ -34,8 +34,6 @@
             label12 = new Label();
             pictureBox1 = new PictureBox();
             btnBuscar = new Button();
-            dtpFechaRegistro = new DateTimePicker();
-            label10 = new Label();
             btnEliminarPaciente = new Button();
             dtpFechaNacimiento = new DateTimePicker();
             cbxSexo = new ComboBox();
@@ -58,7 +56,7 @@
             // 
             // tbxId
             // 
-            tbxId.Location = new Point(312, 97);
+            tbxId.Location = new Point(312, 57);
             tbxId.Name = "tbxId";
             tbxId.Size = new Size(150, 31);
             tbxId.TabIndex = 50;
@@ -66,7 +64,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(70, 100);
+            label9.Location = new Point(70, 60);
             label9.Name = "label9";
             label9.Size = new Size(34, 25);
             label9.TabIndex = 49;
@@ -77,7 +75,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.HotTrack;
-            label12.Location = new Point(206, 30);
+            label12.Location = new Point(206, 10);
             label12.Name = "label12";
             label12.Size = new Size(263, 32);
             label12.TabIndex = 48;
@@ -99,29 +97,13 @@
             btnBuscar.FlatStyle = FlatStyle.Flat;
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = SystemColors.ControlLightLight;
-            btnBuscar.Location = new Point(477, 94);
+            btnBuscar.Location = new Point(477, 54);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(112, 34);
             btnBuscar.TabIndex = 53;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
             btnBuscar.Click += btnBuscar_Click;
-            // 
-            // dtpFechaRegistro
-            // 
-            dtpFechaRegistro.Location = new Point(256, 460);
-            dtpFechaRegistro.Name = "dtpFechaRegistro";
-            dtpFechaRegistro.Size = new Size(333, 31);
-            dtpFechaRegistro.TabIndex = 72;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(74, 460);
-            label10.Name = "label10";
-            label10.Size = new Size(156, 25);
-            label10.TabIndex = 71;
-            label10.Text = "Fecha de Registro:";
             // 
             // btnEliminarPaciente
             // 
@@ -139,7 +121,7 @@
             // 
             // dtpFechaNacimiento
             // 
-            dtpFechaNacimiento.Location = new Point(256, 260);
+            dtpFechaNacimiento.Location = new Point(256, 220);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.Size = new Size(333, 31);
             dtpFechaNacimiento.TabIndex = 69;
@@ -148,7 +130,7 @@
             // 
             cbxSexo.FormattingEnabled = true;
             cbxSexo.Items.AddRange(new object[] { "MASCULINO", "FEMENINO" });
-            cbxSexo.Location = new Point(312, 300);
+            cbxSexo.Location = new Point(312, 260);
             cbxSexo.Name = "cbxSexo";
             cbxSexo.Size = new Size(277, 33);
             cbxSexo.TabIndex = 68;
@@ -156,35 +138,35 @@
             // tbxEmail
             // 
             tbxEmail.Cursor = Cursors.IBeam;
-            tbxEmail.Location = new Point(184, 420);
+            tbxEmail.Location = new Point(184, 380);
             tbxEmail.Name = "tbxEmail";
             tbxEmail.Size = new Size(405, 31);
             tbxEmail.TabIndex = 67;
             // 
             // tbxTelefono
             // 
-            tbxTelefono.Location = new Point(312, 380);
+            tbxTelefono.Location = new Point(312, 340);
             tbxTelefono.Name = "tbxTelefono";
             tbxTelefono.Size = new Size(277, 31);
             tbxTelefono.TabIndex = 66;
             // 
             // tbxDireccion
             // 
-            tbxDireccion.Location = new Point(166, 340);
+            tbxDireccion.Location = new Point(166, 300);
             tbxDireccion.Name = "tbxDireccion";
             tbxDireccion.Size = new Size(423, 31);
             tbxDireccion.TabIndex = 65;
             // 
             // tbxCedula
             // 
-            tbxCedula.Location = new Point(312, 220);
+            tbxCedula.Location = new Point(312, 180);
             tbxCedula.Name = "tbxCedula";
             tbxCedula.Size = new Size(277, 31);
             tbxCedula.TabIndex = 64;
             // 
             // tbxApellidos
             // 
-            tbxApellidos.Location = new Point(312, 180);
+            tbxApellidos.Location = new Point(312, 140);
             tbxApellidos.Name = "tbxApellidos";
             tbxApellidos.Size = new Size(277, 31);
             tbxApellidos.TabIndex = 63;
@@ -192,7 +174,7 @@
             // tbxNombre
             // 
             tbxNombre.ForeColor = SystemColors.WindowText;
-            tbxNombre.Location = new Point(312, 140);
+            tbxNombre.Location = new Point(312, 100);
             tbxNombre.Name = "tbxNombre";
             tbxNombre.Size = new Size(277, 31);
             tbxNombre.TabIndex = 62;
@@ -200,7 +182,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(70, 420);
+            label8.Location = new Point(70, 380);
             label8.Name = "label8";
             label8.Size = new Size(58, 25);
             label8.TabIndex = 61;
@@ -209,7 +191,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(70, 380);
+            label7.Location = new Point(70, 340);
             label7.Name = "label7";
             label7.Size = new Size(83, 25);
             label7.TabIndex = 60;
@@ -218,7 +200,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(70, 340);
+            label6.Location = new Point(70, 300);
             label6.Name = "label6";
             label6.Size = new Size(89, 25);
             label6.TabIndex = 59;
@@ -227,7 +209,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(70, 300);
+            label5.Location = new Point(70, 260);
             label5.Name = "label5";
             label5.Size = new Size(54, 25);
             label5.TabIndex = 58;
@@ -236,7 +218,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(70, 260);
+            label4.Location = new Point(70, 220);
             label4.Name = "label4";
             label4.Size = new Size(181, 25);
             label4.TabIndex = 57;
@@ -245,7 +227,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(70, 220);
+            label3.Location = new Point(70, 180);
             label3.Name = "label3";
             label3.Size = new Size(70, 25);
             label3.TabIndex = 56;
@@ -254,7 +236,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(70, 180);
+            label2.Location = new Point(70, 140);
             label2.Name = "label2";
             label2.Size = new Size(90, 25);
             label2.TabIndex = 55;
@@ -263,7 +245,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(70, 140);
+            label1.Location = new Point(70, 100);
             label1.Name = "label1";
             label1.Size = new Size(87, 25);
             label1.TabIndex = 54;
@@ -275,8 +257,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1014, 596);
-            Controls.Add(dtpFechaRegistro);
-            Controls.Add(label10);
             Controls.Add(btnEliminarPaciente);
             Controls.Add(dtpFechaNacimiento);
             Controls.Add(cbxSexo);
@@ -313,8 +293,6 @@
         private Label label12;
         private PictureBox pictureBox1;
         private Button btnBuscar;
-        private DateTimePicker dtpFechaRegistro;
-        private Label label10;
         private Button btnEliminarPaciente;
         private DateTimePicker dtpFechaNacimiento;
         private ComboBox cbxSexo;

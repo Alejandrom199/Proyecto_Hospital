@@ -1,6 +1,6 @@
-﻿namespace CapaPresentacion.Medico
+﻿namespace CapaPresentacion.Medicamento.Complementos_Medicamentos
 {
-    partial class HorarioView
+    partial class ProveedorView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HorarioView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedorView));
+            tbxNombreContacto = new TextBox();
+            tbxEmail = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            tbxDireccion = new TextBox();
+            label4 = new Label();
             btnNuevo = new Button();
             label3 = new Label();
             btnEliminar = new Button();
             btnModificar = new Button();
             btnAgregar = new Button();
-            dgvEspecialidad = new DataGridView();
-            tbxHoraInicio = new TextBox();
+            dgvProveedor = new DataGridView();
+            tbxNombre = new TextBox();
             tbxId = new TextBox();
             label2 = new Label();
             label1 = new Label();
             btnCerrar = new Button();
-            tbxHoraFin = new TextBox();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            tbxFechaInicio = new TextBox();
-            tbxFechaFin = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dgvEspecialidad).BeginInit();
+            tbxTelefono = new TextBox();
+            label7 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvProveedor).BeginInit();
             SuspendLayout();
+            // 
+            // tbxNombreContacto
+            // 
+            tbxNombreContacto.Location = new Point(534, 140);
+            tbxNombreContacto.Name = "tbxNombreContacto";
+            tbxNombreContacto.Size = new Size(226, 31);
+            tbxNombreContacto.TabIndex = 46;
+            // 
+            // tbxEmail
+            // 
+            tbxEmail.Location = new Point(108, 140);
+            tbxEmail.Name = "tbxEmail";
+            tbxEmail.Size = new Size(235, 31);
+            tbxEmail.TabIndex = 45;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(347, 140);
+            label6.Name = "label6";
+            label6.Size = new Size(181, 25);
+            label6.TabIndex = 44;
+            label6.Text = "Nombre de contacto:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(44, 140);
+            label5.Name = "label5";
+            label5.Size = new Size(58, 25);
+            label5.TabIndex = 43;
+            label5.Text = "Email:";
+            // 
+            // tbxDireccion
+            // 
+            tbxDireccion.Location = new Point(133, 100);
+            tbxDireccion.Name = "tbxDireccion";
+            tbxDireccion.Size = new Size(627, 31);
+            tbxDireccion.TabIndex = 42;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(40, 100);
+            label4.Name = "label4";
+            label4.Size = new Size(89, 25);
+            label4.TabIndex = 41;
+            label4.Text = "Dirección:";
             // 
             // btnNuevo
             // 
@@ -58,7 +108,7 @@
             btnNuevo.Location = new Point(118, 404);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(112, 34);
-            btnNuevo.TabIndex = 23;
+            btnNuevo.TabIndex = 40;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
@@ -70,9 +120,9 @@
             label3.ForeColor = SystemColors.Highlight;
             label3.Location = new Point(324, 13);
             label3.Name = "label3";
-            label3.Size = new Size(97, 25);
-            label3.TabIndex = 22;
-            label3.Text = "HORARIO";
+            label3.Size = new Size(120, 25);
+            label3.TabIndex = 39;
+            label3.Text = "PROVEEDOR";
             // 
             // btnEliminar
             // 
@@ -83,7 +133,7 @@
             btnEliminar.Location = new Point(524, 404);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(112, 34);
-            btnEliminar.TabIndex = 21;
+            btnEliminar.TabIndex = 38;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
@@ -97,7 +147,7 @@
             btnModificar.Location = new Point(387, 404);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(112, 34);
-            btnModificar.TabIndex = 20;
+            btnModificar.TabIndex = 37;
             btnModificar.Text = "Modificar";
             btnModificar.UseVisualStyleBackColor = false;
             btnModificar.Click += btnModificar_Click;
@@ -111,28 +161,28 @@
             btnAgregar.Location = new Point(252, 404);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(112, 34);
-            btnAgregar.TabIndex = 19;
+            btnAgregar.TabIndex = 36;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
-            // dgvEspecialidad
+            // dgvProveedor
             // 
-            dgvEspecialidad.BackgroundColor = SystemColors.ActiveCaption;
-            dgvEspecialidad.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEspecialidad.Location = new Point(12, 147);
-            dgvEspecialidad.Name = "dgvEspecialidad";
-            dgvEspecialidad.RowHeadersWidth = 62;
-            dgvEspecialidad.Size = new Size(776, 244);
-            dgvEspecialidad.TabIndex = 18;
-            dgvEspecialidad.CellClick += dgvEspecialidad_CellClick;
+            dgvProveedor.BackgroundColor = SystemColors.ActiveCaption;
+            dgvProveedor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProveedor.Location = new Point(12, 179);
+            dgvProveedor.Name = "dgvProveedor";
+            dgvProveedor.RowHeadersWidth = 62;
+            dgvProveedor.Size = new Size(776, 214);
+            dgvProveedor.TabIndex = 35;
+            dgvProveedor.CellClick += dgvProveedor_CellClick;
             // 
-            // tbxHoraInicio
+            // tbxNombre
             // 
-            tbxHoraInicio.Location = new Point(271, 60);
-            tbxHoraInicio.Name = "tbxHoraInicio";
-            tbxHoraInicio.Size = new Size(172, 31);
-            tbxHoraInicio.TabIndex = 17;
+            tbxNombre.Location = new Point(252, 60);
+            tbxNombre.Name = "tbxNombre";
+            tbxNombre.Size = new Size(198, 31);
+            tbxNombre.TabIndex = 34;
             // 
             // tbxId
             // 
@@ -140,16 +190,16 @@
             tbxId.Name = "tbxId";
             tbxId.ReadOnly = true;
             tbxId.Size = new Size(80, 31);
-            tbxId.TabIndex = 16;
+            tbxId.TabIndex = 33;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(165, 60);
+            label2.Location = new Point(169, 60);
             label2.Name = "label2";
-            label2.Size = new Size(101, 25);
-            label2.TabIndex = 15;
-            label2.Text = "Hora inicio:";
+            label2.Size = new Size(82, 25);
+            label2.TabIndex = 32;
+            label2.Text = "Nombre:";
             // 
             // label1
             // 
@@ -157,7 +207,7 @@
             label1.Location = new Point(40, 60);
             label1.Name = "label1";
             label1.Size = new Size(34, 25);
-            label1.TabIndex = 14;
+            label1.TabIndex = 31;
             label1.Text = "ID:";
             // 
             // btnCerrar
@@ -169,111 +219,83 @@
             btnCerrar.Location = new Point(743, 16);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(40, 40);
-            btnCerrar.TabIndex = 13;
+            btnCerrar.TabIndex = 30;
             btnCerrar.Text = "X";
             btnCerrar.UseVisualStyleBackColor = false;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // tbxHoraFin
+            // tbxTelefono
             // 
-            tbxHoraFin.Location = new Point(548, 60);
-            tbxHoraFin.Name = "tbxHoraFin";
-            tbxHoraFin.Size = new Size(172, 31);
-            tbxHoraFin.TabIndex = 25;
+            tbxTelefono.Location = new Point(545, 60);
+            tbxTelefono.Name = "tbxTelefono";
+            tbxTelefono.Size = new Size(215, 31);
+            tbxTelefono.TabIndex = 48;
             // 
-            // label4
+            // label7
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(459, 60);
-            label4.Name = "label4";
-            label4.Size = new Size(80, 25);
-            label4.TabIndex = 24;
-            label4.Text = "Hora fin:";
+            label7.AutoSize = true;
+            label7.Location = new Point(456, 60);
+            label7.Name = "label7";
+            label7.Size = new Size(83, 25);
+            label7.TabIndex = 47;
+            label7.Text = "Telefono:";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(165, 105);
-            label5.Name = "label5";
-            label5.Size = new Size(88, 25);
-            label5.TabIndex = 26;
-            label5.Text = "Día inicio:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(459, 105);
-            label6.Name = "label6";
-            label6.Size = new Size(67, 25);
-            label6.TabIndex = 27;
-            label6.Text = "Día fin:";
-            // 
-            // tbxFechaInicio
-            // 
-            tbxFechaInicio.Location = new Point(271, 105);
-            tbxFechaInicio.Name = "tbxFechaInicio";
-            tbxFechaInicio.Size = new Size(172, 31);
-            tbxFechaInicio.TabIndex = 28;
-            // 
-            // tbxFechaFin
-            // 
-            tbxFechaFin.Location = new Point(548, 105);
-            tbxFechaFin.Name = "tbxFechaFin";
-            tbxFechaFin.Size = new Size(172, 31);
-            tbxFechaFin.TabIndex = 29;
-            // 
-            // HorarioView
+            // ProveedorView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
-            Controls.Add(tbxFechaFin);
-            Controls.Add(tbxFechaInicio);
+            Controls.Add(tbxTelefono);
+            Controls.Add(label7);
+            Controls.Add(tbxNombreContacto);
+            Controls.Add(tbxEmail);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(tbxHoraFin);
+            Controls.Add(tbxDireccion);
             Controls.Add(label4);
             Controls.Add(btnNuevo);
             Controls.Add(label3);
             Controls.Add(btnEliminar);
             Controls.Add(btnModificar);
             Controls.Add(btnAgregar);
-            Controls.Add(dgvEspecialidad);
-            Controls.Add(tbxHoraInicio);
+            Controls.Add(dgvProveedor);
+            Controls.Add(tbxNombre);
             Controls.Add(tbxId);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnCerrar);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "HorarioView";
+            Name = "ProveedorView";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "HorarioView";
-            Load += HorarioView_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvEspecialidad).EndInit();
+            Text = "ProveedorView";
+            Load += ProveedorView_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvProveedor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private TextBox tbxNombreContacto;
+        private TextBox tbxEmail;
+        private Label label6;
+        private Label label5;
+        private TextBox tbxDireccion;
+        private Label label4;
         private Button btnNuevo;
         private Label label3;
         private Button btnEliminar;
         private Button btnModificar;
         private Button btnAgregar;
-        private DataGridView dgvEspecialidad;
-        private TextBox tbxHoraInicio;
+        private DataGridView dgvProveedor;
+        private TextBox tbxNombre;
         private TextBox tbxId;
         private Label label2;
         private Label label1;
         private Button btnCerrar;
-        private TextBox tbxHoraFin;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private TextBox tbxFechaInicio;
-        private TextBox tbxFechaFin;
+        private TextBox tbxTelefono;
+        private Label label7;
     }
 }

@@ -49,9 +49,9 @@
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCerrar.ForeColor = SystemColors.ControlLightLight;
-            btnCerrar.Location = new Point(738, 12);
+            btnCerrar.Location = new Point(743, 16);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(50, 50);
+            btnCerrar.Size = new Size(40, 40);
             btnCerrar.TabIndex = 2;
             btnCerrar.Text = "X";
             btnCerrar.UseVisualStyleBackColor = false;
@@ -69,7 +69,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(222, 60);
+            label2.Location = new Point(164, 60);
             label2.Name = "label2";
             label2.Size = new Size(82, 25);
             label2.TabIndex = 4;
@@ -80,12 +80,12 @@
             tbxId.Location = new Point(80, 60);
             tbxId.Name = "tbxId";
             tbxId.ReadOnly = true;
-            tbxId.Size = new Size(109, 31);
+            tbxId.Size = new Size(80, 31);
             tbxId.TabIndex = 5;
             // 
             // tbxNombre
             // 
-            tbxNombre.Location = new Point(310, 60);
+            tbxNombre.Location = new Point(252, 60);
             tbxNombre.Name = "tbxNombre";
             tbxNombre.Size = new Size(150, 31);
             tbxNombre.TabIndex = 6;
