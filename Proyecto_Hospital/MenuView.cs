@@ -327,6 +327,7 @@ namespace CapaPresentacion
 
         private void btnEliminarMedicamentos_Click(object sender, EventArgs e)
         {
+            MostrarFormEnPanel(new EliminarMedicamento());
         }
 
         private void btnListarMedicamentos_Click(object sender, EventArgs e)
@@ -336,6 +337,7 @@ namespace CapaPresentacion
 
         private void btnModificarMedicamentos_Click(object sender, EventArgs e)
         {
+            MostrarFormEnPanel(new ModificarMedicamento());
         }
 
         private void btnFacturacion_Click(object sender, EventArgs e)

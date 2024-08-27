@@ -59,9 +59,9 @@
             // 
             // dtpFechaExpiracion
             // 
-            dtpFechaExpiracion.Location = new Point(267, 220);
+            dtpFechaExpiracion.Location = new Point(247, 220);
             dtpFechaExpiracion.Name = "dtpFechaExpiracion";
-            dtpFechaExpiracion.Size = new Size(322, 31);
+            dtpFechaExpiracion.Size = new Size(342, 31);
             dtpFechaExpiracion.TabIndex = 115;
             // 
             // label13
@@ -104,6 +104,7 @@
             btnBorrarCampos.TabIndex = 103;
             btnBorrarCampos.Text = "Borrar Campos";
             btnBorrarCampos.UseVisualStyleBackColor = false;
+            btnBorrarCampos.Click += btnBorrarCampos_Click;
             // 
             // btnAgregarMedicamento
             // 
@@ -122,10 +123,10 @@
             // cbxPresentacion
             // 
             cbxPresentacion.FormattingEnabled = true;
-            cbxPresentacion.Location = new Point(312, 140);
+            cbxPresentacion.Location = new Point(247, 140);
             cbxPresentacion.Name = "cbxPresentacion";
             cbxPresentacion.RightToLeft = RightToLeft.No;
-            cbxPresentacion.Size = new Size(245, 33);
+            cbxPresentacion.Size = new Size(310, 33);
             cbxPresentacion.TabIndex = 101;
             // 
             // tbxLote
@@ -162,7 +163,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.HotTrack;
-            label12.Location = new Point(206, 10);
+            label12.Location = new Point(168, 10);
             label12.Name = "label12";
             label12.Size = new Size(327, 32);
             label12.TabIndex = 95;
@@ -259,19 +260,19 @@
             // 
             // rtbIndicaciones
             // 
-            rtbIndicaciones.Location = new Point(268, 380);
+            rtbIndicaciones.Location = new Point(247, 380);
             rtbIndicaciones.Name = "rtbIndicaciones";
-            rtbIndicaciones.Size = new Size(321, 116);
+            rtbIndicaciones.Size = new Size(342, 116);
             rtbIndicaciones.TabIndex = 118;
             rtbIndicaciones.Text = "";
             // 
             // cbxProveedor
             // 
             cbxProveedor.FormattingEnabled = true;
-            cbxProveedor.Location = new Point(312, 340);
+            cbxProveedor.Location = new Point(247, 340);
             cbxProveedor.Name = "cbxProveedor";
             cbxProveedor.RightToLeft = RightToLeft.No;
-            cbxProveedor.Size = new Size(245, 33);
+            cbxProveedor.Size = new Size(310, 33);
             cbxProveedor.TabIndex = 119;
             // 
             // btnPresentacion
@@ -323,6 +324,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AgregarMedicamento";
             Text = "AgregarMedicamento";
+            Load += AgregarMedicamento_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
             ResumeLayout(false);

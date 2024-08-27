@@ -111,6 +111,9 @@ namespace CapaNegocio.Controllers
             }
         }
 
+        /**
+        * Método para obtener el Médico mediante su Id
+        **/
         public Dictionary<string, object> GetMedicoPorId(int id)
         {
             try

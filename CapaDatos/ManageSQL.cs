@@ -196,6 +196,39 @@ namespace CapaPersistencia
             return medicoDict;
         }
 
+        public Dictionary<string, object> EjecutarSPSelectMedicamento(string storedProcedureName, SqlParameter[] parameters)
+        {
+            var medicamentoDict = new Dictionary<string, object>();
+            var command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = storedProcedureName;
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            command.Connection = conn.AbrirConexion();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                medicamentoDict["NombreComercial"] = reader["nombre_comercial"];
+                medicamentoDict["NombreGenerico"] = reader["nombre_generico"];
+                medicamentoDict["PresentacionId"] = reader["presentacion_id"];
+                medicamentoDict["Dosis"] = reader["dosis"];
+                medicamentoDict["FechaExpiracion"] = reader["fecha_expiracion"];
+                medicamentoDict["Lote"] = reader["lote"];
+                medicamentoDict["Precio"] = reader["precio"];
+                medicamentoDict["ProveedorId"] = reader["proveedor_id"];
+                medicamentoDict["Indicaciones"] = reader["indicaciones"];
+            }
+
+            reader.Close();
+            conn.CerrarConexion();
+            return medicamentoDict;
+        }
+
         public Dictionary<int, string> EjecutarSPSelectIntToStringUnCampo(string storedProcedureName, string campo, SqlParameter[] parameters)
         {
             var campoDict = new Dictionary<int, string>();
