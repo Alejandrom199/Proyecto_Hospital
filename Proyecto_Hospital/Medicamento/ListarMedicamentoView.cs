@@ -14,6 +14,7 @@ namespace CapaPresentacion
     public partial class ListarMedicamentoView : Form
     {
         private MedicamentoController controller;
+
         public ListarMedicamentoView()
         {
             InitializeComponent();
@@ -32,5 +33,7 @@ namespace CapaPresentacion
                 MessageBox.Show(ex.Message);
             }
         }
+
+
     }
 }

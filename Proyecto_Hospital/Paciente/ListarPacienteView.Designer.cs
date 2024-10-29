@@ -72,6 +72,7 @@
             // 
             // cbxFiltro
             // 
+            cbxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxFiltro.FormattingEnabled = true;
             cbxFiltro.Items.AddRange(new object[] { "Id", "Nombre", "Apellido", "Cedula" });
             cbxFiltro.Location = new Point(110, 125);

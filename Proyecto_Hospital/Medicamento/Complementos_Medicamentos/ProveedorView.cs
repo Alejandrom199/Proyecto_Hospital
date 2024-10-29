@@ -60,6 +60,7 @@ namespace CapaPresentacion.Medicamento.Complementos_Medicamentos
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Dispose();

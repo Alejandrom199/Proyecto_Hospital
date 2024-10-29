@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion.Medicamento
 {
-    partial class EliminarMedicamento
+    partial class EliminarMedicamentoView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarMedicamento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarMedicamentoView));
             btnEliminarMedicamento = new Button();
             pictureBox1 = new PictureBox();
             btnBuscar = new Button();
@@ -275,7 +275,7 @@
             label1.TabIndex = 148;
             label1.Text = "Nombre comercial: ";
             // 
-            // EliminarMedicamento
+            // EliminarMedicamentoView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -306,7 +306,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "EliminarMedicamento";
+            Name = "EliminarMedicamentoView";
             Text = "EliminarMedicamento";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();

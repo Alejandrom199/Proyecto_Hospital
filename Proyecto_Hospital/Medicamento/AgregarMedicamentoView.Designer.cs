@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion.Medicamento
 {
-    partial class AgregarMedicamento
+    partial class AgregarMedicamentoView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarMedicamento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarMedicamentoView));
             dtpFechaExpiracion = new DateTimePicker();
             label13 = new Label();
             label9 = new Label();
@@ -122,6 +122,7 @@
             // 
             // cbxPresentacion
             // 
+            cbxPresentacion.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxPresentacion.FormattingEnabled = true;
             cbxPresentacion.Location = new Point(247, 140);
             cbxPresentacion.Name = "cbxPresentacion";
@@ -268,6 +269,7 @@
             // 
             // cbxProveedor
             // 
+            cbxProveedor.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxProveedor.FormattingEnabled = true;
             cbxProveedor.Location = new Point(247, 340);
             cbxProveedor.Name = "cbxProveedor";
@@ -291,7 +293,7 @@
             btnPresentacion.UseVisualStyleBackColor = false;
             btnPresentacion.Click += btnPresentacion_Click;
             // 
-            // AgregarMedicamento
+            // AgregarMedicamentoView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -322,7 +324,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "AgregarMedicamento";
+            Name = "AgregarMedicamentoView";
             Text = "AgregarMedicamento";
             Load += AgregarMedicamento_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

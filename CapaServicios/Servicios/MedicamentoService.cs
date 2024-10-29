@@ -76,7 +76,7 @@ namespace CapaServicios.Servicios
             Console.WriteLine("entro a la lista de Medicamentos");
             try
             {
-                string nombreStoredProcedure = "SP_OBTENER_MEDICAMENTOS";
+                string nombreStoredProcedure = "SP_OBTENER_MEDICAMENTOS_COMPLETO";
                 return manejo_sql.EjecutarSPSelect(nombreStoredProcedure, null);
             }
             catch (Exception e)

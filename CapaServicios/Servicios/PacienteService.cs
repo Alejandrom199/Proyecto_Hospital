@@ -17,6 +17,7 @@ namespace CapaServicios.Servicios
 
         public bool agregar(Paciente entidad)
         {
+
             try
             {
                 string nombreStoredProcedure = "SP_CREATE_PACIENTE";
@@ -32,7 +33,6 @@ namespace CapaServicios.Servicios
                     new SqlParameter("@telefono", entidad.Telefono),
                     new SqlParameter("@email", entidad.Email),
                     new SqlParameter("@fecha_registro", entidad.FechaRegistro),
-                    new SqlParameter("@historial_medico", entidad.HistorialMedico),
                 };
 
                 return manejo_sql.EjecutarSPSql(nombreStoredProcedure, parametros);
@@ -171,8 +171,7 @@ namespace CapaServicios.Servicios
                     new SqlParameter("@sexo", entidad.Sexo),
                     new SqlParameter("@direccion", entidad.Direccion),
                     new SqlParameter("@telefono", entidad.Telefono),
-                    new SqlParameter("@email", entidad.Email),
-                    new SqlParameter("@historial_medico", entidad.HistorialMedico),
+                    new SqlParameter("@email", entidad.Email)
                 };
 
                 return manejo_sql.EjecutarSPSql(nombreStoredProcedure, parametros);

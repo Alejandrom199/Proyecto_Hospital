@@ -13,6 +13,7 @@ namespace CapaPersistencia
     public class ManageSQL
     {
         private ConnectionDB conn = new ConnectionDB();
+
         public bool EjecutarSPSql(string storedProcedureName, SqlParameter[] parameters)
         {
             var command = new SqlCommand();
@@ -93,6 +94,38 @@ namespace CapaPersistencia
             return resultado;
         }
 
+        public float EjecutarSPSelectFloat(string storedProcedureName, SqlParameter[] parameters)
+        {
+            float resultado = 0;
+
+            var command = new SqlCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = storedProcedureName;
+
+            if (parameters != null)
+            {
+                command.Parameters.AddRange(parameters);
+            }
+
+            command.Connection = conn.AbrirConexion();
+
+            try
+            {
+                // Ejecuta el comando y obtiene el valor como entero
+                var result = command.ExecuteScalar();
+                if (result != null && float.TryParse(result.ToString(), out float parsedResult))
+                {
+                    resultado = parsedResult;
+                }
+            }
+            finally
+            {
+                conn.CerrarConexion();
+            }
+
+            return resultado;
+        }
+
         public string EjecutarSPSelectString(string storedProcedureName, SqlParameter[] parameters)
         {
             string resultado = "";
@@ -152,7 +185,6 @@ namespace CapaPersistencia
                 pacienteDict["Telefono"] = reader["telefono"];
                 pacienteDict["Email"] = reader["email"];
                 pacienteDict["FechaRegistro"] = reader["fecha_registro"];
-                pacienteDict["HistorialMedico"] = reader["historial_medico"];
             }
 
             reader.Close();
@@ -284,5 +316,7 @@ namespace CapaPersistencia
             conn.CerrarConexion();
             return campoDict;
         }
+
+
     }
 }

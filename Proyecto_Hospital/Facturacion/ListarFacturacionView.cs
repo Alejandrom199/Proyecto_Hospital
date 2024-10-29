@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FacturacionView : Form
+    public partial class ListarFacturacionView : Form
     {
         private FacturacionController controller;
-        public FacturacionView()
+        public ListarFacturacionView()
         {
             InitializeComponent();
             controller = new FacturacionController();

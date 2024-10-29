@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaPresentacion.Facturacion;
 
 namespace CapaPresentacion
 {
@@ -322,12 +323,12 @@ namespace CapaPresentacion
 
         private void btnAgregarMedicamentos_Click(object sender, EventArgs e)
         {
-            MostrarFormEnPanel(new AgregarMedicamento());
+            MostrarFormEnPanel(new AgregarMedicamentoView());
         }
 
         private void btnEliminarMedicamentos_Click(object sender, EventArgs e)
         {
-            MostrarFormEnPanel(new EliminarMedicamento());
+            MostrarFormEnPanel(new EliminarMedicamentoView());
         }
 
         private void btnListarMedicamentos_Click(object sender, EventArgs e)
@@ -337,7 +338,7 @@ namespace CapaPresentacion
 
         private void btnModificarMedicamentos_Click(object sender, EventArgs e)
         {
-            MostrarFormEnPanel(new ModificarMedicamento());
+            MostrarFormEnPanel(new ModificarMedicamentoView());
         }
 
         private void btnFacturacion_Click(object sender, EventArgs e)
@@ -410,20 +411,22 @@ namespace CapaPresentacion
 
         private void btnAgregarFacturacion_Click(object sender, EventArgs e)
         {
+            MostrarFormEnPanel(new AgregarFacturacionView());
         }
 
         private void btnEliminarFacturacion_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnListarFacturacion_Click(object sender, EventArgs e)
         {
-            FacturacionView facturacionView = new FacturacionView();
-            MostrarFormEnPanel(facturacionView);
+            MostrarFormEnPanel(new ListarFacturacionView());
         }
 
         private void btnModificarFacturacion_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

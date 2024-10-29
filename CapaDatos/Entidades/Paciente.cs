@@ -18,10 +18,9 @@ namespace CapaDatos.Entidades
         private string telefono;
         private string email;
         private DateTime fecha_registro;
-        private string historial_medico;
 
         // Constructor parametrizado
-        public Paciente(int id_paciente, string nombre, string apellido, string cedula, DateTime fecha_nacimiento, string sexo, string direccion, string telefono, string email, string nss, DateTime fecha_registro, string historial_medico)
+        public Paciente(int id_paciente, string nombre, string apellido, string cedula, DateTime fecha_nacimiento, string sexo, string direccion, string telefono, string email, string nss, DateTime fecha_registro)
         {
             this.id_paciente = id_paciente;
             this.nombre = nombre;
@@ -33,7 +32,6 @@ namespace CapaDatos.Entidades
             this.telefono = telefono;
             this.email = email;
             this.fecha_registro = fecha_registro;
-            this.historial_medico = historial_medico;
         }
 
         // Constructor por defecto
@@ -49,7 +47,6 @@ namespace CapaDatos.Entidades
             telefono = string.Empty;
             email = string.Empty;
             fecha_registro = DateTime.Now;
-            historial_medico = string.Empty;
         }
 
         // Propiedades
@@ -111,12 +108,6 @@ namespace CapaDatos.Entidades
         {
             get { return fecha_registro; }
             set { fecha_registro = value; }
-        }
-
-        public string HistorialMedico
-        {
-            get { return historial_medico; }
-            set { historial_medico = value; }
         }
     }
 

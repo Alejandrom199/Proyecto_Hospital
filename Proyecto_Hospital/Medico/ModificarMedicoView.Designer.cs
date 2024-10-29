@@ -63,6 +63,7 @@
             // 
             // cbxSexo
             // 
+            cbxSexo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxSexo.FormattingEnabled = true;
             cbxSexo.Items.AddRange(new object[] { "MASCULINO", "FEMENINO" });
             cbxSexo.Location = new Point(312, 341);
@@ -72,6 +73,7 @@
             // 
             // cbxConsultorio
             // 
+            cbxConsultorio.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxConsultorio.FormattingEnabled = true;
             cbxConsultorio.Location = new Point(267, 500);
             cbxConsultorio.Name = "cbxConsultorio";
@@ -80,6 +82,7 @@
             // 
             // cbxHorario
             // 
+            cbxHorario.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxHorario.FormattingEnabled = true;
             cbxHorario.Location = new Point(267, 460);
             cbxHorario.Name = "cbxHorario";
@@ -152,6 +155,7 @@
             // 
             // cbxEspecialidad
             // 
+            cbxEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxEspecialidad.FormattingEnabled = true;
             cbxEspecialidad.Location = new Point(312, 260);
             cbxEspecialidad.Name = "cbxEspecialidad";

@@ -102,6 +102,7 @@
             // 
             // cbxSexo
             // 
+            cbxSexo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxSexo.FormattingEnabled = true;
             cbxSexo.Items.AddRange(new object[] { "MASCULINO", "FEMENINO" });
             cbxSexo.Location = new Point(312, 260);

@@ -8,88 +8,55 @@ namespace CapaDatos.Entidades
 {
     public class Facturacion
     {
-        private int id_factura;
-        private Paciente paciente;
-        private Medico medico;
-        private DateTime fecha_factura;
-        private Medicamento[] detalle_medicamentos;
-        private double monto_total;
-        private string estado_pago;
+        private int id;
+        private int paciente_id;
+        private int medico_id;
         private string metodo_pago;
-        private DateTime fecha_pago;
         private string observaciones;
+        private decimal monto_total;
+        private DateTime fecha_factura;
 
         // Constructor parametrizado
-        public Facturacion(int id_factura, Paciente paciente, Medico medico, DateTime fecha_factura, Medicamento[] detalle_medicamentos, double monto_total, string estado_pago, string metodo_pago, DateTime fecha_pago, string observaciones)
+        public Facturacion(int id, int paciente_id, int medico_id, string metodo_pago, string observaciones)
         {
-            this.id_factura = id_factura;
-            this.paciente = paciente;
-            this.medico = medico;
-            this.fecha_factura = fecha_factura;
-            this.detalle_medicamentos = detalle_medicamentos;
-            this.monto_total = monto_total;
-            this.estado_pago = estado_pago;
+            this.id = id;
+            this.paciente_id = paciente_id;
+            this.medico_id = medico_id;
             this.metodo_pago = metodo_pago;
-            this.fecha_pago = fecha_pago;
             this.observaciones = observaciones;
+            this.monto_total = 0;
+            this.fecha_factura = DateTime.Now;
         }
 
         // Constructor por defecto
         public Facturacion()
         {
-            id_factura = 0;
-            paciente = null;
-            medico = null;
-            fecha_factura = DateTime.MinValue;
-            detalle_medicamentos = new Medicamento[0];
-            monto_total = 0.0;
-            estado_pago = string.Empty;
+            id = 0;
+            paciente_id = 0;
+            medico_id = 0;
             metodo_pago = string.Empty;
-            fecha_pago = DateTime.Now;
             observaciones = string.Empty;
+            monto_total = 0;
+            fecha_factura = DateTime.Now;
         }
 
         // Propiedades
-        public int IdFactura
+        public int Id
         {
-            get { return id_factura; }
-            set { id_factura = value; }
+            get { return id; }
+            set { id = value; }
         }
 
-        public Paciente Paciente
+        public int PacienteId
         {
-            get { return paciente; }
-            set { paciente = value; }
+            get { return paciente_id; }
+            set { paciente_id = value; }
         }
 
-        public Medico Medico
+        public int MedicoId
         {
-            get { return medico; }
-            set { medico = value; }
-        }
-
-        public DateTime FechaFactura
-        {
-            get { return fecha_factura; }
-            set { fecha_factura = value; }
-        }
-
-        public Medicamento[] DetalleMedicamentos
-        {
-            get { return detalle_medicamentos; }
-            set { detalle_medicamentos = value; }
-        }
-
-        public double MontoTotal
-        {
-            get { return monto_total; }
-            set { monto_total = value; }
-        }
-
-        public string EstadoPago
-        {
-            get { return estado_pago; }
-            set { estado_pago = value; }
+            get { return medico_id; }
+            set { medico_id = value; }
         }
 
         public string MetodoPago
@@ -98,16 +65,22 @@ namespace CapaDatos.Entidades
             set { metodo_pago = value; }
         }
 
-        public DateTime FechaPago
-        {
-            get { return fecha_pago; }
-            set { fecha_pago = value; }
-        }
-
         public string Observaciones
         {
             get { return observaciones; }
             set { observaciones = value; }
+        }
+
+        public decimal MontoTotal
+        {
+            get { return monto_total; }
+            set { monto_total = value; }
+        }
+
+        public DateTime FechaFactura
+        {
+            get { return fecha_factura; }
+            set { fecha_factura = value; }
         }
     }
 }

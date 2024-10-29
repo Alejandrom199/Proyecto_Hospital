@@ -11,14 +11,17 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion.Medicamento
 {
-    public partial class ModificarMedicamento : Form
+    public partial class EliminarMedicamentoView : Form
     {
         private MedicamentoController controller;
         private bool estaEncontrado = false;
-        public ModificarMedicamento()
+        public EliminarMedicamentoView()
         {
             InitializeComponent();
             controller = new MedicamentoController();
+
+            btnEliminarMedicamento.Enabled = false;
+            habilitarCampos(false);
         }
         private void habilitarCampos(bool opcion)
         {
@@ -45,6 +48,39 @@ namespace CapaPresentacion.Medicamento
             cbxProveedor.Text = string.Empty;
             rtbIndicaciones.Text = string.Empty;
         }
+
+        private void btnEliminarMedicamento_Click(object sender, EventArgs e)
+        {
+            if (estaEncontrado)
+            {
+                int id = Int32.Parse(tbxId.Text);
+
+                try
+                {
+                    DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar el Medicamento?", "Eliminar Medicamento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (resultado == DialogResult.Yes)
+                    {
+                        if (controller.EliminarMedicamento(id))
+                        {
+                            MessageBox.Show("Eliminación de Medicamento realizada con Éxito.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registro no pudo ser eliminado!");
+                        }
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
+
+                    }
+
+
+                }
+                catch (Exception ex) { }
+            }
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (!tbxId.Text.Equals(""))
@@ -63,84 +99,16 @@ namespace CapaPresentacion.Medicamento
                     cbxProveedor.Text = controller.ObtenerNombreProveedorMedianteIdMedico(idMedicamento);
                     rtbIndicaciones.Text = medicamentoInfo["Indicaciones"].ToString();
 
-
-                    habilitarCampos(true);
+                    btnEliminarMedicamento.Enabled = true;
                     estaEncontrado = true;
-                    tbxId.ReadOnly = true;
-                    btnBuscar.Enabled = false;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("ID no registrado como Medicamento");
-                    setearCampos();
-                    habilitarCampos(false);
                     estaEncontrado = false;
+                    btnEliminarMedicamento.Enabled = false;
                 }
             }
-        }
-
-        private void ModificarMedicamento_Load(object sender, EventArgs e)
-        {
-            habilitarCampos(false);
-            CargarDatosComboBoxPresentaciones();
-            CargarDatosComboBoxProveedores();
-        }
-
-        private void CargarDatosComboBoxPresentaciones()
-        {
-            Dictionary<int, string> presentaciones = controller.ObtenerPresentacionesParaMedicamento();
-
-            foreach (KeyValuePair<int, string> presentacion in presentaciones)
-            {
-                cbxPresentacion.Items.Add(presentacion.Value);
-            }
-
-        }
-
-        private void CargarDatosComboBoxProveedores()
-        {
-            Dictionary<int, string> proveedores = controller.ObtenerProveedoresParaMedicamento();
-
-            foreach (KeyValuePair<int, string> proveedor in proveedores)
-            {
-                cbxProveedor.Items.Add(proveedor.Value);
-            }
-        }
-
-        private void btnModificarMedicamento_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int id = Convert.ToInt32(tbxId.Text);
-                string nombre_comercial = tbxNombreComercial.Text;
-                string nombre_generico = tbxNombreGenerico.Text;
-                int presentacion_id = controller.ObtenerIdPresentacionParaMedicamento(cbxPresentacion.Text);
-                string dosis = tbxDosis.Text;
-                DateTime fecha_expiracion = dtpFechaExpiracion.Value;
-                string lote = tbxLote.Text;
-                decimal precio = nudPrecio.Value;
-                int proveedor_id = controller.ObtenerIdProveedorParaMedicamento(cbxProveedor.Text);
-                string indicaciones = rtbIndicaciones.Text;
-
-                var resultado = controller.ModificarMedicamento(id, nombre_comercial, nombre_generico, presentacion_id, dosis, fecha_expiracion, lote, precio, proveedor_id, indicaciones);
-
-                if (resultado)
-                {
-                    MessageBox.Show("Modificación de Medicamento realizada con Éxito.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnBorrarCampos_Click(object sender, EventArgs e)
-        {
-            setearCampos();
-            habilitarCampos(false);
-            tbxId.ReadOnly = false;
-            btnBuscar.Enabled = true;
         }
     }
 }

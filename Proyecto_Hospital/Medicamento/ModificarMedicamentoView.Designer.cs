@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion.Medicamento
 {
-    partial class ModificarMedicamento
+    partial class ModificarMedicamentoView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarMedicamento));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarMedicamentoView));
             cbxProveedor = new ComboBox();
             rtbIndicaciones = new RichTextBox();
             nudPrecio = new NumericUpDown();
@@ -60,6 +60,7 @@
             // 
             // cbxProveedor
             // 
+            cbxProveedor.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxProveedor.FormattingEnabled = true;
             cbxProveedor.Location = new Point(247, 380);
             cbxProveedor.Name = "cbxProveedor";
@@ -112,6 +113,7 @@
             // 
             // cbxPresentacion
             // 
+            cbxPresentacion.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxPresentacion.FormattingEnabled = true;
             cbxPresentacion.Location = new Point(247, 180);
             cbxPresentacion.Name = "cbxPresentacion";
@@ -290,7 +292,7 @@
             btnModificarMedicamento.UseVisualStyleBackColor = false;
             btnModificarMedicamento.Click += btnModificarMedicamento_Click;
             // 
-            // ModificarMedicamento
+            // ModificarMedicamentoView
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -322,7 +324,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "ModificarMedicamento";
+            Name = "ModificarMedicamentoView";
             Text = "ModificarMedicamento";
             Load += ModificarMedicamento_Load;
             ((System.ComponentModel.ISupportInitialize)nudPrecio).EndInit();
