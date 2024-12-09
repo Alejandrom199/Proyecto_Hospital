@@ -92,5 +92,18 @@ namespace CapaServicios.Servicios
 
             return manejo_sql.EjecutarSPSelectInt(nombreStoredProcedure, parametros);
         }
+
+        public decimal ValorMontoTotal(int facturaId)
+        {
+
+            string nombreStoredProcedure = "SP_VALOR_MONTO_TOTAL";
+
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@factura_id", facturaId),
+            };
+
+            return manejo_sql.EjecutarSPSelectDecimal(nombreStoredProcedure, parametros);
+        }
     }
 }

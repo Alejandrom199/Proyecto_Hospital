@@ -13,6 +13,8 @@ namespace CapaNegocio.Controllers
     public class FacturacionController
     {
         private IFacturacion interface_facturacion = new FacturacionService();
+        private decimal montoAEnviar = 0;
+
         /**
         * Método para obtener la lista de las Facturaciones
         **/
@@ -82,7 +84,7 @@ namespace CapaNegocio.Controllers
         {
             try
             {
-                return interface_facturacion.agregar(new Facturacion {});
+                return interface_facturacion.agregar(new Facturacion { });
             }
             catch (Exception e)
             {
@@ -132,16 +134,10 @@ namespace CapaNegocio.Controllers
             }
         }
 
-        public bool ObtenerMontoTotal(int facturaId)
-        {
-            return interface_facturacion.ObtenerMontoTotal(facturaId);
-
-        }
-
         /**
          * Método para realizar una modificación de una Factura
          **/
-        public bool ModificarFactura(int id, int paciente_id, int medico_id, string metodo_pago, string observaciones)
+        public bool ModificarFactura(int id, int paciente_id, int medico_id, string metodo_pago, string observaciones, decimal montoTotal)
         {
             try
             {
@@ -151,7 +147,8 @@ namespace CapaNegocio.Controllers
                     PacienteId = paciente_id,
                     MedicoId = medico_id,
                     MetodoPago = metodo_pago,
-                    Observaciones = observaciones
+                    Observaciones = observaciones,
+                    MontoTotal = montoTotal
                 });
 
             }
@@ -160,5 +157,20 @@ namespace CapaNegocio.Controllers
                 throw new Exception("Error al modificar Factura desde Controlador, " + e.Message);
             }
         }
+
+        public decimal GetValorMontoTotal(int facturaId)
+        {
+
+            try
+            {
+                //De está manera la lógica disminuye en capa Negocio
+                return interface_facturacion.ValorMontoTotal(facturaId);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al obtener el valor de la facturaMedicamentos:" + facturaId + ", desde Controlador, " + e.Message);
+            }
+        }
+
     }
 }

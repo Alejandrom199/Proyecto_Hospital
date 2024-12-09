@@ -17,16 +17,17 @@ namespace CapaPresentacion.Facturacion
         FacturaMedicamentoController controller2;
         AgregarFacturacionView agregarFacturacionView;
         private int facturaIdGenerada;
+        private decimal monto_total = 0;
 
 
         public AnadirMedicamentosAFacturaView(int facturaIdGenerada)
         {
             InitializeComponent();
             this.facturaIdGenerada = facturaIdGenerada;
-            MessageBox.Show(facturaIdGenerada.ToString());
             controller = new FacturacionController();
             controller2 = new FacturaMedicamentoController();
             agregarFacturacionView = new AgregarFacturacionView();
+            tbxCantidad.Text = "0";
         }
 
         /**
@@ -65,11 +66,10 @@ namespace CapaPresentacion.Facturacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             agregarFacturacionView.HabilitarButtonCrearFactura();
+            monto_total = controller2.GetValorMontoTotal(facturaIdGenerada);
             Close();
         }
 
-
-        /*AQUI ESTA EL PROBLEMA AL OBTENER EL MONTO TOTAl*/
 
         private void btnAgregarAFactura_Click(object sender, EventArgs e)
         {
@@ -81,14 +81,19 @@ namespace CapaPresentacion.Facturacion
                     int medicamento_id = controller2.ObtenerIdMedicamentoParaFacturacionMedicamento(cbxMedicamentos.Text);
                     int cantidad = Convert.ToInt32(tbxCantidad.Text);
 
-                    var resultado = controller2.AgregarFacturaMedicamento(facturaIdGenerada, medicamento_id, cantidad);
-
-                    if (resultado)
+                    if (cantidad > 0)
                     {
-                        CargarGridMedicamentosFacturas();
-                        MessageBox.Show("Entro por true");
-                        //decimal monto_total = controller.ObtenerMontoTotal(facturaIdGenerada);
-                        //MessageBox.Show(monto_total.ToString());
+                        var resultado = controller2.AgregarFacturaMedicamento(facturaIdGenerada, medicamento_id, cantidad);
+
+                        if (resultado)
+                        {
+                            tbxCantidad.Text = "0";
+                            CargarGridMedicamentosFacturas();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingrese una cantidad mayor(>) a 0.");
                     }
                 }
                 catch (Exception ex)

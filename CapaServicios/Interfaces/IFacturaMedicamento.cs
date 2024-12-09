@@ -16,5 +16,7 @@ namespace CapaServicios.Interfaces
 
         DataTable listarConId(int factura_id);
 
+        decimal ValorMontoTotal(int facturaId);
+
     }
 }

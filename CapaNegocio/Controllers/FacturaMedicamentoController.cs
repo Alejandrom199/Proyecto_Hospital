@@ -13,6 +13,7 @@ namespace CapaNegocio.Controllers
     public class FacturaMedicamentoController
     {
         private IFacturaMedicamento interface_facturaMedicamento = new FacturaMedicamentoService();
+ 
 
         /**
          * Método para realizar una inserción de un Facturacion
@@ -65,6 +66,20 @@ namespace CapaNegocio.Controllers
             catch (Exception e)
             {
                 throw new Exception("Error al obtener listado de FacturaMedicamento desde Controlador, " + e.Message);
+            }
+        }
+
+        public decimal GetValorMontoTotal(int facturaId)
+        {
+
+            try
+            {
+                //De está manera la lógica disminuye en capa Negocio
+                return interface_facturaMedicamento.ValorMontoTotal(facturaId);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al obtener el valor de la factura:"+facturaId+", desde Controlador, " + e.Message);
             }
         }
 

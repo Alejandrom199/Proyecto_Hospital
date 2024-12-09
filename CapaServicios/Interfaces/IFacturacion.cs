@@ -29,6 +29,6 @@ namespace CapaServicios.Interfaces
 
         int ObtenerFacturaIdReciente();
 
-        bool ObtenerMontoTotal(int facturaId);
+        decimal ValorMontoTotal(int facturaId);
     }
 }

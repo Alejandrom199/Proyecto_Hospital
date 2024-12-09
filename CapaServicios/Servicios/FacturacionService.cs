@@ -20,14 +20,6 @@ namespace CapaServicios.Servicios
             {
                 string nombreStoredProcedure = "SP_CREATE_FACTURA";
 
-                SqlParameter[] parametros = new SqlParameter[]
-                {
-                    /*new SqlParameter("@paciente_id", entidad.PacienteId),
-                    new SqlParameter("@medico_id", entidad.MedicoId),
-                    new SqlParameter("@metodo_pago", entidad.MetodoPago),
-                    new SqlParameter("@observaciones", entidad.Observaciones),*/
-                };
-
                 return manejo_sql.EjecutarSPSql(nombreStoredProcedure, null);
             }
             catch (Exception e)
@@ -68,7 +60,8 @@ namespace CapaServicios.Servicios
                 new SqlParameter("@paciente_id", entidad.PacienteId),
                 new SqlParameter("@medico_id", entidad.MedicoId),
                 new SqlParameter("@metodo_pago", entidad.MetodoPago),
-                new SqlParameter("@observaciones", entidad.Observaciones)
+                new SqlParameter("@observaciones", entidad.Observaciones),
+                new SqlParameter("@monto_total", entidad.MontoTotal)
                 };
 
                 return manejo_sql.EjecutarSPSql(nombreStoredProcedure, parametros);
@@ -162,6 +155,19 @@ namespace CapaServicios.Servicios
             };
 
             return manejo_sql.EjecutarSPSql(nombreStoredProcedure, parametros);
+        }
+
+        public decimal ValorMontoTotal(int facturaId)
+        {
+
+            string nombreStoredProcedure = "SP_VALOR_MONTO_TOTAL";
+
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@factura_id", facturaId),
+            };
+
+            return manejo_sql.EjecutarSPSelectDecimal(nombreStoredProcedure, parametros);
         }
     }
 }

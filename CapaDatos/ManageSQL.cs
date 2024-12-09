@@ -94,9 +94,9 @@ namespace CapaPersistencia
             return resultado;
         }
 
-        public float EjecutarSPSelectFloat(string storedProcedureName, SqlParameter[] parameters)
+        public decimal EjecutarSPSelectDecimal(string storedProcedureName, SqlParameter[] parameters)
         {
-            float resultado = 0;
+            decimal resultado = 0;
 
             var command = new SqlCommand();
             command.CommandType = CommandType.StoredProcedure;
@@ -113,7 +113,7 @@ namespace CapaPersistencia
             {
                 // Ejecuta el comando y obtiene el valor como entero
                 var result = command.ExecuteScalar();
-                if (result != null && float.TryParse(result.ToString(), out float parsedResult))
+                if (result != null && decimal.TryParse(result.ToString(), out decimal parsedResult))
                 {
                     resultado = parsedResult;
                 }

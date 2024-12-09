@@ -36,21 +36,25 @@
             label12 = new Label();
             label8 = new Label();
             label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             cbxMedico = new ComboBox();
             cbxPaciente = new ComboBox();
-            tbxMontoTotal = new TextBox();
             cbxMetodoPago = new ComboBox();
-            btnAnadirMedicamentosFactura = new Button();
-            groupBox1 = new GroupBox();
             btnGenerarFactura = new Button();
             label6 = new Label();
             lblNoFactura = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            tbxMontoTotal = new TextBox();
+            btnAnadirMedicamentosFactura = new Button();
+            groupBox1 = new GroupBox();
+            label7 = new Label();
+            btnGetMonto = new Button();
+            groupBox2 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // rtbObservaciones
@@ -83,6 +87,7 @@
             btnBorrarCampos.TabIndex = 135;
             btnBorrarCampos.Text = "Borrar Campos";
             btnBorrarCampos.UseVisualStyleBackColor = false;
+            btnBorrarCampos.Click += btnBorrarCampos_Click;
             // 
             // btnAgregarFacturacion
             // 
@@ -127,24 +132,6 @@
             label5.TabIndex = 125;
             label5.Text = "Método de Pago:";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(22, 83);
-            label4.Name = "label4";
-            label4.Size = new Size(112, 25);
-            label4.TabIndex = 124;
-            label4.Text = "Monto Total:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(21, 44);
-            label3.Name = "label3";
-            label3.Size = new Size(133, 25);
-            label3.TabIndex = 123;
-            label3.Text = "Medicamentos:";
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -183,15 +170,6 @@
             cbxPaciente.Size = new Size(277, 33);
             cbxPaciente.TabIndex = 144;
             // 
-            // tbxMontoTotal
-            // 
-            tbxMontoTotal.Location = new Point(337, 83);
-            tbxMontoTotal.Name = "tbxMontoTotal";
-            tbxMontoTotal.ReadOnly = true;
-            tbxMontoTotal.Size = new Size(204, 31);
-            tbxMontoTotal.TabIndex = 145;
-            tbxMontoTotal.Text = "0";
-            // 
             // cbxMetodoPago
             // 
             cbxMetodoPago.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -203,42 +181,15 @@
             cbxMetodoPago.Size = new Size(277, 33);
             cbxMetodoPago.TabIndex = 148;
             // 
-            // btnAnadirMedicamentosFactura
-            // 
-            btnAnadirMedicamentosFactura.BackColor = SystemColors.Highlight;
-            btnAnadirMedicamentosFactura.FlatStyle = FlatStyle.Flat;
-            btnAnadirMedicamentosFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnAnadirMedicamentosFactura.ForeColor = SystemColors.ControlLightLight;
-            btnAnadirMedicamentosFactura.Location = new Point(264, 44);
-            btnAnadirMedicamentosFactura.Name = "btnAnadirMedicamentosFactura";
-            btnAnadirMedicamentosFactura.Size = new Size(277, 33);
-            btnAnadirMedicamentosFactura.TabIndex = 149;
-            btnAnadirMedicamentosFactura.Text = "Añadir Medicamentos";
-            btnAnadirMedicamentosFactura.UseVisualStyleBackColor = false;
-            btnAnadirMedicamentosFactura.Click += btnAnadirMedicamentosFactura_Click;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btnAnadirMedicamentosFactura);
-            groupBox1.Controls.Add(tbxMontoTotal);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Location = new Point(48, 366);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(562, 138);
-            groupBox1.TabIndex = 150;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Añadir Medicamentos a la Factura";
-            // 
             // btnGenerarFactura
             // 
             btnGenerarFactura.BackColor = SystemColors.Highlight;
             btnGenerarFactura.FlatStyle = FlatStyle.Flat;
             btnGenerarFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnGenerarFactura.ForeColor = SystemColors.ControlLightLight;
-            btnGenerarFactura.Location = new Point(218, 67);
+            btnGenerarFactura.Location = new Point(251, 68);
             btnGenerarFactura.Name = "btnGenerarFactura";
-            btnGenerarFactura.Size = new Size(220, 40);
+            btnGenerarFactura.Size = new Size(168, 40);
             btnGenerarFactura.TabIndex = 151;
             btnGenerarFactura.Text = "Generar Factura";
             btnGenerarFactura.UseVisualStyleBackColor = false;
@@ -248,7 +199,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(471, 75);
+            label6.Location = new Point(1, 18);
             label6.Name = "label6";
             label6.Size = new Size(113, 25);
             label6.TabIndex = 152;
@@ -257,10 +208,100 @@
             // lblNoFactura
             // 
             lblNoFactura.AutoSize = true;
-            lblNoFactura.Location = new Point(585, 75);
+            lblNoFactura.Location = new Point(111, 17);
             lblNoFactura.Name = "lblNoFactura";
             lblNoFactura.Size = new Size(0, 25);
             lblNoFactura.TabIndex = 153;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(21, 44);
+            label3.Name = "label3";
+            label3.Size = new Size(133, 25);
+            label3.TabIndex = 123;
+            label3.Text = "Medicamentos:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(22, 83);
+            label4.Name = "label4";
+            label4.Size = new Size(112, 25);
+            label4.TabIndex = 124;
+            label4.Text = "Monto Total:";
+            // 
+            // tbxMontoTotal
+            // 
+            tbxMontoTotal.Location = new Point(232, 85);
+            tbxMontoTotal.Name = "tbxMontoTotal";
+            tbxMontoTotal.ReadOnly = true;
+            tbxMontoTotal.Size = new Size(139, 31);
+            tbxMontoTotal.TabIndex = 145;
+            tbxMontoTotal.Text = "0";
+            // 
+            // btnAnadirMedicamentosFactura
+            // 
+            btnAnadirMedicamentosFactura.BackColor = SystemColors.Highlight;
+            btnAnadirMedicamentosFactura.FlatStyle = FlatStyle.Flat;
+            btnAnadirMedicamentosFactura.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnAnadirMedicamentosFactura.ForeColor = SystemColors.ControlLightLight;
+            btnAnadirMedicamentosFactura.Location = new Point(232, 44);
+            btnAnadirMedicamentosFactura.Name = "btnAnadirMedicamentosFactura";
+            btnAnadirMedicamentosFactura.Size = new Size(309, 33);
+            btnAnadirMedicamentosFactura.TabIndex = 149;
+            btnAnadirMedicamentosFactura.Text = "Añadir Medicamentos";
+            btnAnadirMedicamentosFactura.UseVisualStyleBackColor = false;
+            btnAnadirMedicamentosFactura.Click += btnAnadirMedicamentosFactura_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(btnGetMonto);
+            groupBox1.Controls.Add(btnAnadirMedicamentosFactura);
+            groupBox1.Controls.Add(tbxMontoTotal);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Location = new Point(48, 366);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(562, 178);
+            groupBox1.TabIndex = 150;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Añadir Medicamentos a la Factura";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.ForeColor = Color.Red;
+            label7.Location = new Point(40, 137);
+            label7.Name = "label7";
+            label7.Size = new Size(485, 25);
+            label7.TabIndex = 151;
+            label7.Text = "Para generar la facturación debe dar click a 'Generar Monto'.";
+            // 
+            // btnGetMonto
+            // 
+            btnGetMonto.BackColor = Color.DeepSkyBlue;
+            btnGetMonto.FlatStyle = FlatStyle.Flat;
+            btnGetMonto.Font = new Font("Segoe UI Black", 9F);
+            btnGetMonto.ForeColor = SystemColors.ControlLightLight;
+            btnGetMonto.Location = new Point(378, 83);
+            btnGetMonto.Name = "btnGetMonto";
+            btnGetMonto.Size = new Size(163, 34);
+            btnGetMonto.TabIndex = 150;
+            btnGetMonto.Text = "Generar Monto";
+            btnGetMonto.UseVisualStyleBackColor = false;
+            btnGetMonto.Click += btnGetMonto_Click;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(lblNoFactura);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Location = new Point(425, 58);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(168, 49);
+            groupBox2.TabIndex = 154;
+            groupBox2.TabStop = false;
             // 
             // AgregarFacturacionView
             // 
@@ -268,8 +309,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(1014, 596);
-            Controls.Add(lblNoFactura);
-            Controls.Add(label6);
+            Controls.Add(groupBox2);
             Controls.Add(btnGenerarFactura);
             Controls.Add(groupBox1);
             Controls.Add(cbxMetodoPago);
@@ -287,10 +327,12 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AgregarFacturacionView";
             Text = "AgregarFacturacionView";
-            Load += AgregarFacturacionView_Load;
+            Load += AgregarFacturacionView_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -303,18 +345,21 @@
         private Label label12;
         private Label label8;
         private Label label5;
-        private Label label4;
-        private Label label3;
         private Label label2;
         private Label label1;
         private ComboBox cbxMedico;
         private ComboBox cbxPaciente;
-        private TextBox tbxMontoTotal;
         private ComboBox cbxMetodoPago;
-        private Button btnAnadirMedicamentosFactura;
-        private GroupBox groupBox1;
         private Button btnGenerarFactura;
         private Label label6;
         private Label lblNoFactura;
+        private Label label3;
+        private Label label4;
+        private TextBox tbxMontoTotal;
+        private Button btnAnadirMedicamentosFactura;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private Button btnGetMonto;
+        private Label label7;
     }
 }
